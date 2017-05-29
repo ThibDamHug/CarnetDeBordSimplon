@@ -8,6 +8,6 @@ import co.simplon.models.Answer;
 @Repository
 public interface AnswerRepository extends CrudRepository<Answer, Integer> {
 	
-	public Iterable<Answer> findByUserId(int userId);
+	public Iterable<Answer> findByUserId(int studentId);
 
 }
