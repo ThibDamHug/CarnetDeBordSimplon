@@ -14,8 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import co.simplon.users.User;
-import co.simplon.usersservice.UserService;
+import co.simplon.models.User;
+import co.simplon.services.UserService;
+
+
+
 
 @RestController
 @RequestMapping("/users")

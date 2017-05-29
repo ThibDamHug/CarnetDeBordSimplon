@@ -20,7 +20,6 @@ import co.simplon.security.rest.configuration.RESTAuthenticationSuccessHandler;
 
 //Previent SpringBoot Security
 @EnableWebSecurity
-
 @Configuration
 
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -63,36 +62,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   			.permitAll()
   		.and()
   			.csrf()
-  			.disable();		
-//		.formLogin()
-//			.loginPage("/login.html")
-//				.usernameParameter("username").passwordParameter("password")
-//				.defaultSuccessUrl("/index.html")
-//				.failureUrl("/login.html")
-//		.and()
-//			.logout()
-//				.logoutUrl("/logout")
-//				.deleteCookies("JSESSIONID")
-//				.permitAll()
-//		.and()
-//			.authorizeRequests()
-//			.antMatchers("/").permitAll()
-//			.antMatchers("/login.html").denyAll()
-//			.antMatchers("/administrateur/**").hasAuthority("ROLE_administrateur")
-//			.antMatchers("/formateur/**").hasAnyAuthority("ROLE_formateur","ROLE_caca")
-//			.antMatchers("/apprenant/**").hasAuthority("ROLE_apprenant")
-//			.anyRequest().authenticated()
-//		.and()
-//			.csrf()
-//			.disable();
-
-//	  		.cors()
-//	  	.and()
-//	  		.authorizeRequests()
-//	  		.anyRequest().authenticated()
-//	  	.and()
-//	  		.httpBasic();
-
+  			.disable();
 	}
 	
     @Bean

@@ -18,47 +18,46 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-import co.simplon.users.Role;
-import co.simplon.usersservice.UserService;
-
-
+import co.simplon.models.Role;
+import co.simplon.models.User;
+import co.simplon.services.UserService;
 
 @Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class AuthSecurityConfiguration extends GlobalAuthenticationConfigurerAdapter {
-	
+
 	@Autowired
 	UserService service;
-	
+
 	@Override
 	public void init(AuthenticationManagerBuilder auth) throws Exception {
-			auth.userDetailsService(userDetailsService());
+		auth.userDetailsService(userDetailsService());
 	}
-	
+
 	@Bean
-	UserDetailsService userDetailsService(){
+	UserDetailsService userDetailsService() {
 		return new UserDetailsService() {
-			
-			//Besoin pour le ManytoMany en Lazy
+
+			// Besoin pour le ManytoMany en Lazy
 			@Transactional
 			@Override
 			public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-				co.simplon.users.User account = service.findByEmail(email);
-				if(account != null) {
+				User account = service.findByEmail(email);
+				if (account != null) {
 					return new User2(account.getEmail(), account.getPassword(), true, true, true, true,
 							getAuthorities(account.getRole()));
 				} else {
-					throw new UsernameNotFoundException ("Impossible de trouver le compte :"+ email +".");
+					throw new UsernameNotFoundException("Impossible de trouver le compte :" + email + ".");
 				}
 			}
 		};
 	}
-	
-	//Creation d'un collection d'autorisation a partir d'une liste de role
-	public Collection<? extends GrantedAuthority> getAuthorities(Role role) {
+
+	// Creation d'un collection d'autorisation a partir d'une liste de role
+	private Collection<? extends GrantedAuthority> getAuthorities(Role role) {
 		String ROLE_PREFIX = "ROLE_";
-        List<GrantedAuthority> list = new ArrayList<GrantedAuthority>();
-        list.add(new SimpleGrantedAuthority(ROLE_PREFIX + role.getName()));
-        return list;
-    }
+		List<GrantedAuthority> list = new ArrayList<GrantedAuthority>();
+		list.add(new SimpleGrantedAuthority(ROLE_PREFIX + role.getName()));
+		return list;
+	}
 }

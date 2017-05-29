@@ -8,6 +8,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import co.simplon.models.Conclusion;
 import co.simplon.models.User;
 import co.simplon.repositories.UserRepository;
 
@@ -25,11 +26,11 @@ public class UserService {
 
 	
 	public User findByEmail(String email) {
-		return userDao.findByEmail(email);
+		return userRepo.findByEmail(email);
 	}
 	
 	public void save (User user) {
-		userDao.save(user);
+		userRepo.save(user);
 	}
 	
 	public List<User> findAll () {
@@ -54,17 +55,17 @@ public class UserService {
 		  Iterable <User> getByRoleTemp = userRepo.findByRoleName(string);
 		  List <User> getByRole = new ArrayList<User>();
 		  for (User userTemp : getByRoleTemp) {
-			  getByRole.add(setFinalUser(userTemp));
+			  getByRole.add(filterService.setFinalUser(userTemp));
 		  }
 		  return getByRole;
 	  }
 	  
 		public List<User> getUserListWithoutConclusion(int diaryId,int promoId) {
-			Iterable <User> getAllFromAPromo = userDao.findAllByPromoId(promoId); 
+			Iterable <User> getAllFromAPromo = userRepo.findByPromoId(promoId); 
 			List <User> getWithoutConclusion = new ArrayList<User>();
 			for (User userTemp : getAllFromAPromo){
-						if (!userTemp.getConclusionsList().isEmpty()) {
-							List<Conclusion> conclusionListTemp = userTemp.getConclusionsList();				
+						if (!userTemp.getConclusions().isEmpty()) {
+							List<Conclusion> conclusionListTemp = userTemp.getConclusions();				
 							List<Conclusion> conclusionListTemp2 = new ArrayList<Conclusion>();
 							for (Conclusion conclusionTemp : conclusionListTemp) {
 								if (conclusionTemp.getDiary().getId() == diaryId) {
@@ -72,7 +73,7 @@ public class UserService {
 								}
 							}
 							if (conclusionListTemp2.isEmpty()){
-								getWithoutConclusion.add(setFinalUser(userTemp));
+								getWithoutConclusion.add(filterService.setFinalUser(userTemp));
 							}
 						}
 			}
@@ -80,13 +81,9 @@ public class UserService {
 		}
 	    
 	  public void update(int id ,User user) {
-		  User userFinal = userDao.findOne(id);
-		  userFinal = setFinalUser(user);
-		  userDao.save(userFinal);
+		  User userFinal = userRepo.findOne(id);
+		  userFinal = filterService.setFinalUser(user);
+		  userRepo.save(userFinal);
 	  }
-	  
-	  /////////////////////////////////////// Methodes Privés ///////////////////////////////////////////
-	  
-
 	  
 }

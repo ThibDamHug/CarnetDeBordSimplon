@@ -8,20 +8,20 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import co.simplon.diaries.Question;
-import co.simplon.diariesservice.QuestionService;
+import co.simplon.models.Question;
+import co.simplon.services.QuestionService;
 
 @RestController
 @RequestMapping("/questions")
 public class QuestionRestController {
-	
-		@Autowired
-		QuestionService questionService;
-		
-		//Permet de sauvegarder une liste de questions(mockup 11)
-	  	@PostMapping
-	  	public void createUser(@RequestBody List<Question> questionsList) {
-	  		questionService.saveQuestionsList(questionsList);
-	  	}
-	
+
+	@Autowired
+	QuestionService questionService;
+
+	// Permet de sauvegarder une liste de questions(mockup 11)
+	@PostMapping
+	public void createUser(@RequestBody List<Question> questionsList) {
+		questionService.saveQuestionsList(questionsList);
+	}
+
 }
