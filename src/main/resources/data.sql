@@ -10,6 +10,8 @@ INSERT INTO `role` (`name`) VALUES
 -- promo
 INSERT INTO `promo` (`name`,`start_date`,`end_date`) VALUES
 ('laposte1','2016-11-01','2017-07-30');
+INSERT INTO `promo` (`name`,`start_date`,`end_date`) VALUES
+('pole-emploi','2017-09-01','2018-02-30');
 -- diary
 INSERT INTO `diary` (`name`,`start_date`,`end_date`,`introduction`,`promo_id`) VALUES
 ('session1 complete','2017-01-01','2017-01-15','ceci sera ma premiere introduction',1);
