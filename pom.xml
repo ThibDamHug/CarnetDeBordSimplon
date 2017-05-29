@@ -4,12 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>co.simplon</groupId>
-	<artifactId>CarnetDeBordSimplon</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>CarnetDeBordSimplon</name>
-	<description>Projet Démo pour la certification</description>
+	<name>carnet de bord simplon</name>
+	<description>Projet pour la certification</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -86,4 +85,5 @@
 		</plugins>
 	</build>
 
+	<artifactId>carnet-de-bord-simplon</artifactId>
 </project>
