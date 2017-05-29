@@ -8,7 +8,6 @@ import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-import co.simplon.users.User;
 import lombok.Getter;
 import lombok.Setter;
 
