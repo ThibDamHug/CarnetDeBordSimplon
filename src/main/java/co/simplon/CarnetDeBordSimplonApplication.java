@@ -1,4 +1,4 @@
-package co.simplon.CarnetDeBordSimplon;
+package co.simplon;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
