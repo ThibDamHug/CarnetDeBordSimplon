@@ -29,13 +29,53 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
+		
+		<!-- 		Besoin pour @restController et @RequestMapping -->
+
+		<dependency>
+    		<groupId>org.springframework.boot</groupId>
+    		<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		
+<!-- 		Besoin pour crudrepository et @id-->
+
+		<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        
+<!-- 		Besoin pour getters/Setters auto -->
+
+        <dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		
+<!-- 		Besoin pour se connecter a la base de donnee/Config app.prop -->
+		
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
+<!-- 		Besoin pour pour les test J-Unit -->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
+
+<!-- 		Besoin pour spring security -->
+
+<!-- 		<dependency>
+		  <groupId>org.springframework.boot</groupId>
+		  <artifactId>spring-boot-starter-security</artifactId>
+		</dependency> -->
+		
+	</dependencies> 
 
 	<build>
 		<plugins>
@@ -45,6 +85,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
 
 </project>
