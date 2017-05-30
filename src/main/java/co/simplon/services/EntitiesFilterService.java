@@ -55,6 +55,8 @@ public class EntitiesFilterService {
 		Promo finalPromo = new Promo();
 		finalPromo.setId(promo.getId());
 		finalPromo.setName(promo.getName());
+		finalPromo.setStartDate(promo.getStartDate());
+		finalPromo.setEndDate(promo.getEndDate());
 		return finalPromo;
 	}
 }

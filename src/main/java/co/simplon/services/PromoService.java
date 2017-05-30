@@ -18,11 +18,14 @@ public class PromoService {
 	@Autowired
 	private PromoRepository promoDao;
 	
+	@Autowired
+	private EntitiesFilterService filterService;
+	
 	public List<Promo> findAll(){
 		List<Promo> result = new ArrayList<Promo>();
 		Iterable<Promo> inter = promoDao.findAll();
 		for(Promo promo : inter){
-			result.add(promo);;
+			result.add(filterService.setFinalPromo(promo));
 		}
 		return result;
 	}
