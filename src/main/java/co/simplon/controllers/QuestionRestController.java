@@ -12,7 +12,7 @@ import co.simplon.models.Question;
 import co.simplon.services.QuestionService;
 
 @RestController
-@RequestMapping("/questions")
+@RequestMapping("api/questions")
 public class QuestionRestController {
 
 	@Autowired

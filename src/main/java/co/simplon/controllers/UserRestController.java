@@ -17,11 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import co.simplon.models.User;
 import co.simplon.services.UserService;
 
-
-
-
 @RestController
-@RequestMapping("/users")
+@RequestMapping("api/users")
 public class UserRestController {     
 
 	  @Autowired

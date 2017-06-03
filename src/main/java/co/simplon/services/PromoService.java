@@ -19,13 +19,13 @@ public class PromoService {
 	private PromoRepository promoDao;
 	
 	@Autowired
-	private EntitiesFilterService filterService;
+	private MapperService mapperService;
 	
 	public List<Promo> findAll(){
 		List<Promo> result = new ArrayList<Promo>();
 		Iterable<Promo> inter = promoDao.findAll();
 		for(Promo promo : inter){
-			result.add(filterService.setFinalPromo(promo));
+			result.add(mapperService.setFinalPromo(promo));
 		}
 		return result;
 	}

@@ -7,7 +7,7 @@ import co.simplon.models.Promo;
 import co.simplon.models.Question;
 import co.simplon.models.User;
 
-public class EntitiesFilterService {
+public class MapperService {
 
 	/////////////////////////////////////// Question Filter /////////////////////////////////////////
 

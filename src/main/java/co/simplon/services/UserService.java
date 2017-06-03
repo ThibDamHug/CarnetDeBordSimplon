@@ -22,7 +22,7 @@ public class UserService {
 	private UserRepository userRepo;
 	
 	@Autowired
-	private EntitiesFilterService filterService;
+	private MapperService mapperService;
 
 	
 	public User findByEmail(String email) {
@@ -38,7 +38,7 @@ public class UserService {
 		//La requete findAll n'est meme pas a specifier dans UserDao
 		Iterable <User> findAll = userRepo.findAll();
 		for (User userTemp: findAll) {
-			usersList.add(filterService.setFinalUser(userTemp));
+			usersList.add(mapperService.setFinalUser(userTemp));
 		}
 		return usersList;
 	}
@@ -47,7 +47,7 @@ public class UserService {
 		  Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		  String currentPrincipal = authentication.getName();
 		  User user = userRepo.findByEmail(currentPrincipal);
-		  User userFinal = filterService.setFinalUser(user);
+		  User userFinal = mapperService.setFinalUser(user);
 		  return userFinal;
 	  }
 	  
@@ -55,7 +55,7 @@ public class UserService {
 		  Iterable <User> getByRoleTemp = userRepo.findByRoleName(string);
 		  List <User> getByRole = new ArrayList<User>();
 		  for (User userTemp : getByRoleTemp) {
-			  getByRole.add(filterService.setFinalUser(userTemp));
+			  getByRole.add(mapperService.setFinalUser(userTemp));
 		  }
 		  return getByRole;
 	  }
@@ -73,7 +73,7 @@ public class UserService {
 								}
 							}
 							if (conclusionListTemp2.isEmpty()){
-								getWithoutConclusion.add(filterService.setFinalUser(userTemp));
+								getWithoutConclusion.add(mapperService.setFinalUser(userTemp));
 							}
 						}
 			}
@@ -82,7 +82,7 @@ public class UserService {
 	    
 	  public void update(int id ,User user) {
 		  User userFinal = userRepo.findOne(id);
-		  userFinal = filterService.setFinalUser(user);
+		  userFinal = mapperService.setFinalUser(user);
 		  userRepo.save(userFinal);
 	  }
 	  
