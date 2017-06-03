@@ -42,10 +42,10 @@ public class AuthSecurityConfiguration extends GlobalAuthenticationConfigurerAda
 			@Transactional
 			@Override
 			public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-				User account = service.findByEmail(email);
-				if (account != null) {
-					return new User2(account.getEmail(), account.getPassword(), true, true, true, true,
-							getAuthorities(account.getRole()));
+				User user = service.findByEmail(email);
+				if (user != null) {
+					return new User2(user.getEmail(), user.getPassword(), true, true, true, true,
+							getAuthorities(user.getRole()));
 				} else {
 					throw new UsernameNotFoundException("Impossible de trouver le compte :" + email + ".");
 				}
@@ -56,8 +56,8 @@ public class AuthSecurityConfiguration extends GlobalAuthenticationConfigurerAda
 	// Creation d'un collection d'autorisation a partir d'une liste de role
 	private Collection<? extends GrantedAuthority> getAuthorities(Role role) {
 		String ROLE_PREFIX = "ROLE_";
-		List<GrantedAuthority> list = new ArrayList<GrantedAuthority>();
-		list.add(new SimpleGrantedAuthority(ROLE_PREFIX + role.getName()));
-		return list;
+		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+		authorities.add(new SimpleGrantedAuthority(ROLE_PREFIX + role.getName()));
+		return authorities;
 	}
 }

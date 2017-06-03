@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import co.simplon.models.User;
-import co.simplon.services.UserService;
+import co.simplon.servicesI.UserServicesI;
 
 @RestController
 @RequestMapping("api/users")
@@ -23,7 +23,7 @@ public class UserRestController {
 
 	  @Autowired
 	  
-	  private UserService userService;
+	  private UserServicesI userService;
 	   
 	  //Permet de recuperer les utilisateurs en fonction des roles (mockup 4 et 5) ou en fonction d'une promo et d'un carnet (mockup 11)
 	  //@RequestMapping(method=RequestMethod.GET)

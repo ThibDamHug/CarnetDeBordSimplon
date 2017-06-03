@@ -11,9 +11,10 @@ import org.springframework.stereotype.Service;
 import co.simplon.models.Conclusion;
 import co.simplon.models.User;
 import co.simplon.repositories.UserRepository;
+import co.simplon.servicesI.UserServicesI;
 
 @Service
-public class UserService {
+public class UserService implements UserServicesI {
 
 	//Cree automatique l'instance et/ou la classe demandé si necessaire
 	@Autowired 

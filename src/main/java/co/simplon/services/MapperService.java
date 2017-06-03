@@ -35,6 +35,14 @@ public class MapperService {
 		pairDTO.setPromo(setPromoDTO(pair.getPromo()));
 		return pairDTO;
 	}
+	
+	protected User setSimpleUserDTO (User user) {
+		User userDTO = new User();
+		userDTO.setId(user.getId());
+		userDTO.setFirstname(user.getFirstname());
+		userDTO.setLastname(user.getLastname());
+		return userDTO;
+	}
 
 	protected User setUserDTO(User user) {
 		User userDTO = new User();
