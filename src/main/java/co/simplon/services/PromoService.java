@@ -16,25 +16,25 @@ import co.simplon.repositories.PromoRepository;
 public class PromoService {
 
 	@Autowired
-	private PromoRepository promoDao;
+	private PromoRepository promoRepo;
 	
 	@Autowired
 	private MapperService mapperService;
 	
 	public List<Promo> findAll(){
 		List<Promo> result = new ArrayList<Promo>();
-		Iterable<Promo> inter = promoDao.findAll();
+		Iterable<Promo> inter = promoRepo.findAll();
 		for(Promo promo : inter){
-			result.add(mapperService.setFinalPromo(promo));
+			result.add(mapperService.setPromoDTO(promo));
 		}
 		return result;
 	}
 	
 	public Promo savePromo(Promo promo){
-		return promoDao.save(promo);
+		return promoRepo.save(promo);
 	}
 	
 	public Promo updatePromo(Promo promo){
-		return promoDao.save(promo);
+		return promoRepo.save(promo);
 	}
 }

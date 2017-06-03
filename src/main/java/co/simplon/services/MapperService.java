@@ -14,52 +14,52 @@ public class MapperService {
 
 	/////////////////////////////////////// Question Mapper /////////////////////////////////////////
 
-	protected List<Question> QuestionsList(List<Question> questionsList) {
-		List<Question> QuestionsListFinal = new ArrayList<Question>();
+	protected List<Question> setQuestionsDTO (List<Question> questionsList) {
+		List<Question> questionsDTO = new ArrayList<Question>();
 		for (Question question : questionsList) {
 			Question questionFinal = new Question();
 			questionFinal.setId(question.getId());
 			questionFinal.setContent(question.getContent());
 			questionFinal.setRole(question.getRole());
-			QuestionsListFinal.add(questionFinal);
+			questionsDTO.add(questionFinal);
 		}
-		return QuestionsListFinal;
+		return questionsDTO;
 	}
 
 	///////////////////////////////////////// USer Mapper /////////////////////////////////////////
 
-	protected User setFinalPair(User pair) {
-		User userFinal = new User();
-		userFinal.setId(pair.getId());
-		userFinal.setFirstname(pair.getFirstname());
-		userFinal.setPromo(setFinalPromo(pair.getPromo()));
-		return userFinal;
+	protected User setPairDTO(User pair) {
+		User pairDTO = new User();
+		pairDTO.setId(pair.getId());
+		pairDTO.setFirstname(pair.getFirstname());
+		pairDTO.setPromo(setPromoDTO(pair.getPromo()));
+		return pairDTO;
 	}
 
-	protected User setFinalUser(User user) {
-		User userFinal = new User();
-		userFinal.setId(user.getId());
-		userFinal.setFirstname(user.getFirstname());
-		userFinal.setLastname(user.getLastname());
-		userFinal.setPassword(user.getPassword());
-		userFinal.setEmail(user.getEmail());
-		userFinal.setRole(user.getRole());
+	protected User setUserDTO(User user) {
+		User userDTO = new User();
+		userDTO.setId(user.getId());
+		userDTO.setFirstname(user.getFirstname());
+		userDTO.setLastname(user.getLastname());
+		userDTO.setPassword(user.getPassword());
+		userDTO.setEmail(user.getEmail());
+		userDTO.setRole(user.getRole());
 		if (user.getPromo() != null) {
-			userFinal.setPromo(setFinalPromo(user.getPromo()));
+			userDTO.setPromo(setPromoDTO(user.getPromo()));
 		}
 		if (user.getPair() != null) {
-			userFinal.setPair(setFinalPair(user.getPair()));
+			userDTO.setPair(setPairDTO(user.getPair()));
 		}
-		return userFinal;
+		return userDTO;
 	}
 	///////////////////////////////////////// Promo Mapper /////////////////////////////////////////
 	
-	protected Promo setFinalPromo(Promo promo) {
-		Promo finalPromo = new Promo();
-		finalPromo.setId(promo.getId());
-		finalPromo.setName(promo.getName());
-		finalPromo.setStartDate(promo.getStartDate());
-		finalPromo.setEndDate(promo.getEndDate());
-		return finalPromo;
+	protected Promo setPromoDTO (Promo promo) {
+		Promo promoDTO = new Promo();
+		promoDTO.setId(promo.getId());
+		promoDTO.setName(promo.getName());
+		promoDTO.setStartDate(promo.getStartDate());
+		promoDTO.setEndDate(promo.getEndDate());
+		return promoDTO;
 	}
 }

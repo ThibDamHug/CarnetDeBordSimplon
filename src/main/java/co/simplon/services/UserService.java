@@ -12,8 +12,6 @@ import co.simplon.models.Conclusion;
 import co.simplon.models.User;
 import co.simplon.repositories.UserRepository;
 
-
-
 @Service
 public class UserService {
 
@@ -34,56 +32,56 @@ public class UserService {
 	}
 	
 	public List<User> findAll () {
-		List <User> usersList = new ArrayList<>();
+		List <User> usersDTO = new ArrayList<>();
 		//La requete findAll n'est meme pas a specifier dans UserDao
 		Iterable <User> findAll = userRepo.findAll();
-		for (User userTemp: findAll) {
-			usersList.add(mapperService.setFinalUser(userTemp));
+		for (User user: findAll) {
+			usersDTO.add(mapperService.setUserDTO(user));
 		}
-		return usersList;
+		return usersDTO;
 	}
 		
-	  public User getConnect() {
-		  Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		  String currentPrincipal = authentication.getName();
-		  User user = userRepo.findByEmail(currentPrincipal);
-		  User userFinal = mapperService.setFinalUser(user);
-		  return userFinal;
-	  }
+	public User getConnect() {
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		String currentPrincipal = authentication.getName();
+		User user = userRepo.findByEmail(currentPrincipal);
+		User userConnected = mapperService.setUserDTO(user);
+		return userConnected;
+	}
 	  
-	  public List<User> userListgetByRole (String string) {
-		  Iterable <User> getByRoleTemp = userRepo.findByRoleName(string);
-		  List <User> getByRole = new ArrayList<User>();
-		  for (User userTemp : getByRoleTemp) {
-			  getByRole.add(mapperService.setFinalUser(userTemp));
-		  }
-		  return getByRole;
-	  }
-	  
-		public List<User> getUserListWithoutConclusion(int diaryId,int promoId) {
-			Iterable <User> getAllFromAPromo = userRepo.findByPromoId(promoId); 
-			List <User> getWithoutConclusion = new ArrayList<User>();
-			for (User userTemp : getAllFromAPromo){
-						if (!userTemp.getConclusions().isEmpty()) {
-							List<Conclusion> conclusionListTemp = userTemp.getConclusions();				
-							List<Conclusion> conclusionListTemp2 = new ArrayList<Conclusion>();
-							for (Conclusion conclusionTemp : conclusionListTemp) {
-								if (conclusionTemp.getDiary().getId() == diaryId) {
-									conclusionListTemp2.add(conclusionTemp);
-								}
-							}
-							if (conclusionListTemp2.isEmpty()){
-								getWithoutConclusion.add(mapperService.setFinalUser(userTemp));
-							}
-						}
-			}
-		return getWithoutConclusion;
+	public List<User> getByRoleDTO (String string) {
+		Iterable <User> getByRole = userRepo.findByRoleName(string);
+		List <User> getByRoleDTO = new ArrayList<User>();
+		for (User user : getByRole) {
+			getByRoleDTO.add(mapperService.setUserDTO(user));
 		}
+		return getByRoleDTO;
+	}
+	  
+	public List<User> withoutConclusion(int diaryId,int promoId) {
+		Iterable <User> fromAPromo = userRepo.findByPromoId(promoId); 
+		List <User> withoutConclusionDTO = new ArrayList<User>();
+		for (User user : fromAPromo){
+			if (!user.getConclusions().isEmpty()) {
+				List<Conclusion> conclusions = user.getConclusions();				
+				List<Conclusion> conclusionsDTO = new ArrayList<Conclusion>();
+				for (Conclusion conclusion : conclusions) {
+					if (conclusion.getDiary().getId() == diaryId) {
+						conclusionsDTO.add(conclusion);
+					}
+				}
+				if (conclusionsDTO.isEmpty()){
+					withoutConclusionDTO.add(mapperService.setUserDTO(user));
+				}
+			}
+		}
+		return withoutConclusionDTO;
+	}
 	    
-	  public void update(int id ,User user) {
-		  User userFinal = userRepo.findOne(id);
-		  userFinal = mapperService.setFinalUser(user);
-		  userRepo.save(userFinal);
-	  }
+	public void update(int id ,User user) {
+		User userFinal = userRepo.findOne(id);
+		userFinal = mapperService.setUserDTO(user);
+		userRepo.save(userFinal);
+	}
 	  
 }

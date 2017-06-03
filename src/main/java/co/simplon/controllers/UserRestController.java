@@ -33,9 +33,9 @@ public class UserRestController {
 			  						@RequestParam Optional<Integer> diaryId,
 			  						@RequestParam Optional<Integer> promoId ) {
 		  if (diaryId.isPresent() && promoId.isPresent()) {
-			  return userService.getUserListWithoutConclusion(diaryId.get(), promoId.get());
+			  return userService.withoutConclusion(diaryId.get(), promoId.get());
 		  } else if (role.isPresent()) {
-			  return userService.userListgetByRole(role.get()); 
+			  return userService.getByRoleDTO(role.get()); 
 		  } else {
 			  return userService.findAll();
 		  }
