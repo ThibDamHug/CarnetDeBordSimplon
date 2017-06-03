@@ -3,13 +3,16 @@ package co.simplon.services;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import co.simplon.models.Promo;
 import co.simplon.models.Question;
 import co.simplon.models.User;
 
+@Service
 public class MapperService {
 
-	/////////////////////////////////////// Question Filter /////////////////////////////////////////
+	/////////////////////////////////////// Question Mapper /////////////////////////////////////////
 
 	protected List<Question> QuestionsList(List<Question> questionsList) {
 		List<Question> QuestionsListFinal = new ArrayList<Question>();
@@ -23,7 +26,7 @@ public class MapperService {
 		return QuestionsListFinal;
 	}
 
-	///////////////////////////////////////// USer Filter /////////////////////////////////////////
+	///////////////////////////////////////// USer Mapper /////////////////////////////////////////
 
 	protected User setFinalPair(User pair) {
 		User userFinal = new User();
@@ -49,7 +52,7 @@ public class MapperService {
 		}
 		return userFinal;
 	}
-	///////////////////////////////////////// USer Filter /////////////////////////////////////////
+	///////////////////////////////////////// Promo Mapper /////////////////////////////////////////
 	
 	protected Promo setFinalPromo(Promo promo) {
 		Promo finalPromo = new Promo();
