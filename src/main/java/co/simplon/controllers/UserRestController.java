@@ -64,8 +64,8 @@ public class UserRestController {
 	  
 	  //Permet de recuperer l'utilisateur connecte (mockup1)
 	  @GetMapping("/connected")
-	  public User userConnected() {
-		  User result = userService.getUserConnect();
+	  public User getUserConnected() {
+		  User result = userService.getUserConnected();
 		  if (null == result) {
 			  throw new CustomException(ErrorMessageEnum.FETCH);
 		  }		  

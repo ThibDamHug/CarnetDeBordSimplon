@@ -3,6 +3,7 @@ package co.simplon.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,11 +28,13 @@ public class PromoRestController {
 	@Autowired
 	PromoService service;
 
+	@PreAuthorize("hasRole('ROLE_administrateur')")
 	@GetMapping
 	public List<Promo> findAll() {
 		return service.findAll();
 	}
-		
+	
+	@PreAuthorize("hasRole('ROLE_administrateur')")
 	@PostMapping
 	public Promo save(@Validated @RequestBody Promo promo){
 		Promo result;
@@ -45,6 +48,7 @@ public class PromoRestController {
 		return result;
 	}
 	
+	@PreAuthorize("hasRole('ROLE_administrateur')")
 	@PutMapping
 	public Promo update(@RequestBody Promo promo){
 		return service.updatePromo(promo);

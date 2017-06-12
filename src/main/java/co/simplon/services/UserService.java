@@ -47,7 +47,7 @@ public class UserService implements UserServicesI {
 		return usersDTO;
 	}
 		
-	public User getUserConnect() {
+	public User getUserConnected() {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		String currentPrincipal = authentication.getName();
 		User user = userRepo.findByEmail(currentPrincipal);
