@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,7 +35,7 @@ public class UserRestController {
 	   
 	  //Permet de recuperer les utilisateurs en fonction des roles (mockup 4 et 5) ou en fonction d'une promo et d'un carnet (mockup 11)
 	  //@RequestMapping(method=RequestMethod.GET)
-	  @PreAuthorize("hasRole('ROLE_administrateur') AND hasRole('ROLE_formateur')")  
+	  @PreAuthorize("hasAnyRole('ROLE_administrateur,ROLE_formateur')")  
 	  @GetMapping
 	  public List<User> getUsers (	@RequestParam Optional<String> role,
 			  						@RequestParam Optional<Integer> diaryId,
@@ -51,7 +52,7 @@ public class UserRestController {
 	  //Permet de creer un utilisateur (mockup3)
 	  @PreAuthorize("hasRole('ROLE_administrateur')")
 	  @PostMapping
-	  public void createUser(@RequestBody User user) {
+	  public void createUser(@Validated @RequestBody User user) {
 	     userService.save(user);
 	  }
 	  
@@ -64,7 +65,7 @@ public class UserRestController {
 	  
 	  //Permet de recuperer l'utilisateur connecte (mockup1)
 	  @GetMapping("/connected")
-	  public User userConnected() {
+	  public User getUserConnected() {
 		  User result = userService.getUserConnect();
 		  if (null == result) {
 			  throw new CustomException(ErrorMessageEnum.FETCH);

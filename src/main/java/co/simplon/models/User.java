@@ -8,6 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -36,20 +39,25 @@ public class User {
 	@GeneratedValue//(strategy=GenerationType.AUTO)
 	private int id;
 	
+	@NotEmpty
 	private String firstname;
 	
+	@NotEmpty
 	private String lastname;
-		
+	
+	@NotEmpty
 	private String password;
 	
-	private String email;
+	@NotEmpty
+	private String email;	
 	
 	@OneToOne
-	private User pair;
+	private User pair;	
 	
 	@ManyToOne
 	private Promo promo;
 	
+	@NotNull
 	@ManyToOne
 	private Role role;
 	

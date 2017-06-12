@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import lombok.Getter;
 import lombok.Setter;
 /**
@@ -19,14 +21,7 @@ public class Role {
 	@Id
 	@GeneratedValue
 	private int id;
-
+	@NotEmpty
 	private String name;
-
-	// Entité esclave lié par List <Role> roles
-	// @JsonBackReference
-	// @ManyToMany(mappedBy = "roles")
-
-	// @OneToMany(mappedBy="role")
-	// private List <User> users;
 
 }

@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -29,9 +31,9 @@ public class DiaryRestController {
 	@Autowired
 	private DiaryService service;
 	
-	//@Formateur
+	@PreAuthorize("hasRole('ROLE_formateur')")
 	@PostMapping
-	public Diary saveOne(@RequestBody Diary diary) {
+	public Diary saveOne(@Validated @RequestBody Diary diary) {
 		
 		Diary result = service.saveOne(diary);
 		if (null == result) {
@@ -39,7 +41,8 @@ public class DiaryRestController {
 		}
 		return result;
 	}
-	//@Formateur, @Tuteur, @Apprenant
+
+	@PreAuthorize("hasAnyRole('ROLE_administrateur','ROLE_formateur','ROLE_tuteur')")
 	@GetMapping
 	public List<Diary> getAll(@RequestParam Optional<Boolean> consulter,
 								@RequestParam String userRole,

@@ -1,6 +1,7 @@
 package co.simplon.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,7 +25,7 @@ public class ConclusionRestController {
 	private ConclusionService service;
 	
 	@PostMapping
-	public Conclusion saveOne(@RequestBody Conclusion conclusion) {
+	public Conclusion saveOne(@Validated @RequestBody Conclusion conclusion) {
 		Conclusion result = service.saveOne(conclusion);
 		if (null == result) {
 			throw new CustomException(ErrorMessageEnum.CREATION);

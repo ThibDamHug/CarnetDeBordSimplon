@@ -8,6 +8,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -28,15 +31,15 @@ public class Diary {
 	@Id
 	@GeneratedValue
 	private int id;
-
+	@NotEmpty
 	private String name;
-
+	@NotNull
 	private Date startDate;
-
+	@NotNull
 	private Date endDate;
-
+	@NotEmpty
 	private String introduction;
-
+	@NotNull
 	@ManyToOne
 	private Promo promo;
 

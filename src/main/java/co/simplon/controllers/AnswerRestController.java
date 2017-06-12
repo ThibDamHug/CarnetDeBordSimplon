@@ -3,6 +3,7 @@ package co.simplon.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -34,7 +35,7 @@ public class AnswerRestController {
 	}
 	
 	@PostMapping
-	public List<Answer> saveAnswers(@RequestBody List<Answer> answers) {
+	public List<Answer> saveAnswers(@Validated @RequestBody List<Answer> answers) {
 		List<Answer> result = service.saveAll(answers);
 		if (result.isEmpty()) {
 			throw new CustomException(ErrorMessageEnum.CREATION);

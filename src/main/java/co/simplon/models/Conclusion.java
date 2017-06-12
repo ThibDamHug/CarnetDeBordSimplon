@@ -4,6 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -24,12 +27,12 @@ public class Conclusion {
 	@Id
 	@GeneratedValue
 	private int id;
-	
+	@NotEmpty
 	private String content;
-	
+	@NotNull
 	@ManyToOne
 	private Diary diary;
-	
+	@NotNull
 	@ManyToOne
 	private User user;
 
