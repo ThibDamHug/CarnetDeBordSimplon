@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import co.simplon.errorenum.ErrorMessageEnum;
+import co.simplon.exceptions.CustomException;
 import co.simplon.models.Conclusion;
 import co.simplon.services.ConclusionService;
 
@@ -19,7 +21,10 @@ public class ConclusionRestController {
 	
 	@PostMapping
 	public Conclusion saveOne(@RequestBody Conclusion conclusion) {
-		return service.saveOne(conclusion);
+		Conclusion result = service.saveOne(conclusion);
+		if (null == result) {
+			throw new CustomException(ErrorMessageEnum.CREATION);
+		}
+		return result;
 	}
-
 }

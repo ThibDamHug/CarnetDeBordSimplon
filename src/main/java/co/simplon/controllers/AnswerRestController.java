@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import co.simplon.errorenum.ErrorMessageEnum;
+import co.simplon.exceptions.CustomException;
 import co.simplon.models.Answer;
 import co.simplon.services.AnswerService;
 
@@ -29,7 +31,11 @@ public class AnswerRestController {
 	
 	@PostMapping
 	public List<Answer> saveAnswers(@RequestBody List<Answer> answers) {
-		return service.saveAll(answers);
+		List<Answer> result = service.saveAll(answers);
+		if (result.isEmpty()) {
+			throw new CustomException(ErrorMessageEnum.CREATION);
+		}
+		return result;
 	}
 
 }

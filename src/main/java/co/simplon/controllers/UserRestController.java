@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import co.simplon.errorenum.ErrorMessageEnum;
+import co.simplon.exceptions.CustomException;
 import co.simplon.models.User;
 import co.simplon.servicesI.UserServicesI;
 
@@ -58,7 +60,11 @@ public class UserRestController {
 	  //Permet de recuperer l'utilisateur connecte (mockup1)
 	  @GetMapping("/connected")
 	  public User userConnected() {
-		  return userService.getConnect();
+		  User result = userService.getConnect();
+		  if (null == result) {
+			  throw new CustomException(ErrorMessageEnum.FETCH);
+		  }		  
+		  return result;
 	  }
 	  
 }

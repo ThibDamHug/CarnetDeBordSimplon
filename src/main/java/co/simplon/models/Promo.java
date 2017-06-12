@@ -5,9 +5,6 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
@@ -25,9 +22,8 @@ public class Promo {
 	@GeneratedValue
 	private int id;
 	
-	private String name;
+	private String name;	
 	
-	@NotNull(message = "blabla")
 	private Date startDate;
 	
 	private Date endDate;

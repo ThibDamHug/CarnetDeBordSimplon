@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import co.simplon.errorenum.ErrorMessageEnum;
+import co.simplon.exceptions.CustomException;
 import co.simplon.models.Promo;
-import co.simplon.restcontrolleradvices.exceptions.CustomException;
 import co.simplon.services.PromoService;
 
 @RestController
@@ -33,8 +34,8 @@ public class PromoRestController {
 		try {
 			result = service.savePromo(promo);
 		} catch (Exception e) {
-			throw new CustomException("Probleme lors de la création de la promo",
-										"0402");
+			e.printStackTrace();
+			throw new CustomException(ErrorMessageEnum.CREATION);
 		}
 		
 		return result;
