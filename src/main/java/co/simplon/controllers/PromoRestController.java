@@ -3,6 +3,7 @@ package co.simplon.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import co.simplon.models.Promo;
+import co.simplon.restcontrolleradvices.exceptions.CustomException;
 import co.simplon.services.PromoService;
 
 @RestController
@@ -24,10 +26,18 @@ public class PromoRestController {
 	public List<Promo> findAll() {
 		return service.findAll();
 	}
-	
+		
 	@PostMapping
-	public Promo save(@RequestBody Promo promo){
-		return service.savePromo(promo);
+	public Promo save(@Validated @RequestBody Promo promo){
+		Promo result;
+		try {
+			result = service.savePromo(promo);
+		} catch (Exception e) {
+			throw new CustomException("Probleme lors de la création de la promo",
+										"0402");
+		}
+		
+		return result;
 	}
 	
 	@PutMapping

@@ -42,6 +42,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   				.authenticationEntryPoint(authenticationEntryPoint)
   		.and()
   			.formLogin()
+  				.usernameParameter("email")
   				.successHandler(authenticationsuccessHandler)
   				.failureHandler(authenticationFailureHandler)
   				.permitAll()
