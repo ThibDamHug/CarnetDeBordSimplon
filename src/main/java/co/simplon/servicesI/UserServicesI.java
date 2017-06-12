@@ -3,7 +3,11 @@ package co.simplon.servicesI;
 import java.util.List;
 
 import co.simplon.models.User;
-
+/**
+ * 
+ * @author Franck Pesson
+ *
+ */
 public interface UserServicesI {
 	
 	public User findByEmail(String email) ;

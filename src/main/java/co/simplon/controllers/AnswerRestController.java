@@ -14,7 +14,11 @@ import co.simplon.errorenum.ErrorMessageEnum;
 import co.simplon.exceptions.CustomException;
 import co.simplon.models.Answer;
 import co.simplon.services.AnswerService;
-
+/**
+ * 
+ * @author Damien Pradier
+ *
+ */
 //@CrossOrigin("http://localhost:3000")
 @RestController
 @RequestMapping("api/answers")

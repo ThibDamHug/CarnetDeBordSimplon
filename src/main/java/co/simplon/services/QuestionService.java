@@ -7,7 +7,11 @@ import org.springframework.stereotype.Service;
 
 import co.simplon.models.Question;
 import co.simplon.repositories.QuestionRepository;
-
+/**
+ * 
+ * @author Franck Pesson
+ *
+ */
 @Service
 public class QuestionService {
 

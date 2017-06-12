@@ -11,7 +11,11 @@ import co.simplon.security.rest.configuration.RESTAuthenticationEntryPoint;
 import co.simplon.security.rest.configuration.RESTAuthenticationFailureHandler;
 import co.simplon.security.rest.configuration.RESTAuthenticationSuccessHandler;
 import co.simplon.security.rest.configuration.RESTLogoutSuccessHandler;
-
+/**
+ * 
+ * @author Franck Pesson
+ *
+ */
 //Previent SpringBoot Security
 @EnableWebSecurity
 @Configuration

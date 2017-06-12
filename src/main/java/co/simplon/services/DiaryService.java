@@ -13,7 +13,11 @@ import co.simplon.models.Diary;
 import co.simplon.models.Question;
 import co.simplon.models.User;
 import co.simplon.repositories.DiaryRepository;
-
+/**
+ * 
+ * @author Abdel Ahmar
+ *
+ */
 @Service
 @Transactional
 public class DiaryService {

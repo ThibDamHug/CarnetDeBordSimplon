@@ -14,7 +14,11 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import lombok.Getter;
 import lombok.Setter;
-
+/**
+ * 
+ * @author Franck Pesson
+ *
+ */
 //Dit a hibernate que ca correspond a une table
 @Entity
 //Lombok pour creer auto les getter/setter

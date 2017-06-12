@@ -15,7 +15,11 @@ import co.simplon.errorenum.ErrorMessageEnum;
 import co.simplon.exceptions.CustomException;
 import co.simplon.models.Promo;
 import co.simplon.services.PromoService;
-
+/**
+ * 
+ * @author Damien Pradier
+ *
+ */
 @RestController
 @RequestMapping(value = "api/promo")
 public class PromoRestController {

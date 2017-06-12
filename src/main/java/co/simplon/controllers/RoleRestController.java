@@ -9,7 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import co.simplon.models.Role;
 import co.simplon.services.RoleService;
-
+/**
+ * 
+ * @author Damien Pradier
+ *
+ */
 @RestController
 @RequestMapping(value="api/role")
 public class RoleRestController {

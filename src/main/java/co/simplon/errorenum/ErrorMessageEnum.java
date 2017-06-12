@@ -1,7 +1,11 @@
 package co.simplon.errorenum;
 
 import lombok.Getter;
-
+/**
+ * 
+ * @author Abdel Ahmar
+ *
+ */
 @Getter
 public enum ErrorMessageEnum {
 	

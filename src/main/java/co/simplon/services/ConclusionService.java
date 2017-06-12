@@ -6,7 +6,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import co.simplon.models.Conclusion;
 import co.simplon.repositories.ConclusionRepository;
-
+/**
+ * 
+ * @author Abdel Ahmar
+ *
+ */
 @Service
 @Transactional
 public class ConclusionService {
