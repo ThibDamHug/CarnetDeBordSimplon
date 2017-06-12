@@ -34,7 +34,7 @@ public class UserRestController {
 	   
 	  //Permet de recuperer les utilisateurs en fonction des roles (mockup 4 et 5) ou en fonction d'une promo et d'un carnet (mockup 11)
 	  //@RequestMapping(method=RequestMethod.GET)
-	  @PreAuthorize("hasRole('ROLE_administrateur') AND hasRole('ROLE_formateur')")  
+	  @PreAuthorize("hasAnyRole('ROLE_administrateur,ROLE_formateur')")  
 	  @GetMapping
 	  public List<User> getUsers (	@RequestParam Optional<String> role,
 			  						@RequestParam Optional<Integer> diaryId,
