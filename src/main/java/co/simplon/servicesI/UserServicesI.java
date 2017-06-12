@@ -16,7 +16,7 @@ public interface UserServicesI {
 	
 	public List<User> findAll ();
 	
-	public User getConnect();
+	public User getUserConnect();
 	
 	public List<User> getByRoleDTO (String string);
 	

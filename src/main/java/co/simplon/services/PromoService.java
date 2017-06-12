@@ -8,6 +8,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import co.simplon.mappers.PromoMapper;
 import co.simplon.models.Promo;
 import co.simplon.repositories.PromoRepository;
 /**
@@ -23,13 +24,13 @@ public class PromoService {
 	private PromoRepository promoRepo;
 	
 	@Autowired
-	private MapperService mapperService;
+	private PromoMapper promoMapper;
 	
 	public List<Promo> findAll(){
 		List<Promo> result = new ArrayList<Promo>();
 		Iterable<Promo> inter = promoRepo.findAll();
 		for(Promo promo : inter){
-			result.add(mapperService.setPromoDTO(promo));
+			result.add(promoMapper.setPromoDTO(promo));
 		}
 		return result;
 	}

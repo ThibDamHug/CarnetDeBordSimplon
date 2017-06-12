@@ -11,12 +11,19 @@ import co.simplon.models.Promo;
 @Service
 public class PromoMapper {
 
-	protected Promo setPromoDTO (Promo promo) {
+	public Promo setPromoDTO (Promo promo) {
 		Promo promoDTO = new Promo();
 		promoDTO.setId(promo.getId());
 		promoDTO.setName(promo.getName());
 		promoDTO.setStartDate(promo.getStartDate());
 		promoDTO.setEndDate(promo.getEndDate());
+		return promoDTO;
+	}
+	
+	public Promo setPromoConnectedDTO (Promo promo) {
+		Promo promoDTO = new Promo();
+		promoDTO.setId(promo.getId());
+		promoDTO.setName(promo.getName());
 		return promoDTO;
 	}
 }

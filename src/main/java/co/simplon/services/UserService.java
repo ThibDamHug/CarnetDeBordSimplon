@@ -8,6 +8,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+import co.simplon.mappers.UserMapper;
 import co.simplon.models.Conclusion;
 import co.simplon.models.User;
 import co.simplon.repositories.UserRepository;
@@ -25,7 +26,7 @@ public class UserService implements UserServicesI {
 	private UserRepository userRepo;
 	
 	@Autowired
-	private MapperService mapperService;
+	private UserMapper userMapper;
 
 	
 	public User findByEmail(String email) {
@@ -41,16 +42,16 @@ public class UserService implements UserServicesI {
 		//La requete findAll n'est meme pas a specifier dans UserDao
 		Iterable <User> findAll = userRepo.findAll();
 		for (User user: findAll) {
-			usersDTO.add(mapperService.setUserDTO(user));
+			usersDTO.add(userMapper.setUserDTO(user));
 		}
 		return usersDTO;
 	}
 		
-	public User getConnect() {
+	public User getUserConnect() {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		String currentPrincipal = authentication.getName();
 		User user = userRepo.findByEmail(currentPrincipal);
-		User userConnected = mapperService.setUserDTO(user);
+		User userConnected = userMapper.setUserConnectedDTO(user);
 		return userConnected;
 	}
 	  
@@ -58,7 +59,7 @@ public class UserService implements UserServicesI {
 		Iterable <User> getByRole = userRepo.findByRoleName(string);
 		List <User> getByRoleDTO = new ArrayList<User>();
 		for (User user : getByRole) {
-			getByRoleDTO.add(mapperService.setUserDTO(user));
+			getByRoleDTO.add(userMapper.setUserDTO(user));
 		}
 		return getByRoleDTO;
 	}
@@ -76,7 +77,7 @@ public class UserService implements UserServicesI {
 					}
 				}
 				if (conclusionsDTO.isEmpty()){
-					withoutConclusionDTO.add(mapperService.setUserDTO(user));
+					withoutConclusionDTO.add(userMapper.setUserDTO(user));
 				}
 			}
 		}
@@ -85,7 +86,7 @@ public class UserService implements UserServicesI {
 	    
 	public void update(int id ,User user) {
 		User userFinal = userRepo.findOne(id);
-		userFinal = mapperService.setUserDTO(user);
+		userFinal = userMapper.setUserDTO(user);
 		userRepo.save(userFinal);
 	}
 	  

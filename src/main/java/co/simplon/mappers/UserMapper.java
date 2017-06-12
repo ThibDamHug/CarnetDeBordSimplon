@@ -32,7 +32,7 @@ public class UserMapper {
 		return userDTO;
 	}
 
-	protected User setUserDTO(User user) {
+	public User setUserDTO(User user) {
 		User userDTO = new User();
 		userDTO.setId(user.getId());
 		userDTO.setFirstname(user.getFirstname());
@@ -42,6 +42,22 @@ public class UserMapper {
 		userDTO.setRole(user.getRole());
 		if (user.getPromo() != null) {
 			userDTO.setPromo(promoMapper.setPromoDTO(user.getPromo()));
+		}
+		if (user.getPair() != null) {
+			userDTO.setPair(setPairDTO(user.getPair()));
+		}
+		return userDTO;
+	}
+	
+	public User setUserConnectedDTO(User user) {
+		User userDTO = new User();
+		userDTO.setId(user.getId());
+		userDTO.setFirstname(user.getFirstname());
+		userDTO.setLastname(user.getLastname());
+		userDTO.setEmail(user.getEmail());
+		userDTO.setRole(user.getRole());
+		if (user.getPromo() != null) {
+			userDTO.setPromo(promoMapper.setPromoConnectedDTO(user.getPromo()));
 		}
 		if (user.getPair() != null) {
 			userDTO.setPair(setPairDTO(user.getPair()));
