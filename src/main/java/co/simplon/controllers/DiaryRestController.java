@@ -16,7 +16,11 @@ import co.simplon.errorenum.ErrorMessageEnum;
 import co.simplon.exceptions.CustomException;
 import co.simplon.models.Diary;
 import co.simplon.services.DiaryService;
-
+/**
+ * 
+ * @author Abdel Ahmar
+ *
+ */
 //@CrossOrigin("http://localhost:3000")
 @RestController
 @RequestMapping("api/diaries")

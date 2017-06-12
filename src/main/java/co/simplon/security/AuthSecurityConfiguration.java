@@ -21,7 +21,11 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import co.simplon.models.Role;
 import co.simplon.models.User;
 import co.simplon.services.UserService;
-
+/**
+ * 
+ * @author Franck Pesson
+ *
+ */
 @Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class AuthSecurityConfiguration extends GlobalAuthenticationConfigurerAdapter {

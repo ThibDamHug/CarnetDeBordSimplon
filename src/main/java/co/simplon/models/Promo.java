@@ -11,7 +11,11 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 import lombok.Getter;
 import lombok.Setter;
-
+/**
+ * 
+ * @author Damien Pradier
+ *
+ */
 @Entity
 @Getter
 @Setter

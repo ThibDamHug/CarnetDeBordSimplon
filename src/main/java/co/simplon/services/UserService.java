@@ -12,7 +12,11 @@ import co.simplon.models.Conclusion;
 import co.simplon.models.User;
 import co.simplon.repositories.UserRepository;
 import co.simplon.servicesI.UserServicesI;
-
+/**
+ * 
+ * @author Franck Pesson
+ *
+ */
 @Service
 public class UserService implements UserServicesI {
 

@@ -10,7 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import co.simplon.models.Question;
 import co.simplon.services.QuestionService;
-
+/**
+ * 
+ * @author Franck Pesson
+ *
+ */
 @RestController
 @RequestMapping("api/questions")
 public class QuestionRestController {

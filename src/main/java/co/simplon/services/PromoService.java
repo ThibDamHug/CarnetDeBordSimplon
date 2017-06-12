@@ -10,7 +10,11 @@ import org.springframework.stereotype.Service;
 
 import co.simplon.models.Promo;
 import co.simplon.repositories.PromoRepository;
-
+/**
+ * 
+ * @author Damien Pradier
+ *
+ */
 @Service
 @Transactional
 public class PromoService {

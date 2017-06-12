@@ -19,6 +19,11 @@ import co.simplon.exceptions.CustomException;
 import co.simplon.models.User;
 import co.simplon.servicesI.UserServicesI;
 
+/**
+ * 
+ * @author Franck Pesson
+ *
+ */
 @RestController
 @RequestMapping("api/users")
 public class UserRestController {     

@@ -9,7 +9,11 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.stereotype.Component;
-
+/**
+ * 
+ * @author Abdel Ahmar
+ *
+ */
 @Component
 public class RESTAuthenticationFailureHandler implements AuthenticationFailureHandler {
 

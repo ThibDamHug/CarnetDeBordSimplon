@@ -10,7 +10,11 @@ import org.springframework.stereotype.Service;
 
 import co.simplon.models.Role;
 import co.simplon.repositories.RoleRepository;
-
+/**
+ * 
+ * @author Damien Pradier
+ *
+ */
 @Service
 @Transactional
 public class RoleService {

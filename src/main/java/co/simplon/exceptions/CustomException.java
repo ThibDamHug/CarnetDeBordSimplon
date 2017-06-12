@@ -2,7 +2,11 @@ package co.simplon.exceptions;
 
 import co.simplon.errorenum.ErrorMessageEnum;
 import lombok.Getter;
-
+/**
+ * 
+ * @author Abdel Ahmar
+ *
+ */
 @Getter
 public class CustomException extends RuntimeException {
 	
