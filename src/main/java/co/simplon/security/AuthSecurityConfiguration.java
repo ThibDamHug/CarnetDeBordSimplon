@@ -44,7 +44,7 @@ public class AuthSecurityConfiguration extends GlobalAuthenticationConfigurerAda
 			public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 				User user = service.findByEmail(email);
 				if (user != null) {
-					return new User2(user.getEmail(), user.getPassword(), true, true, true, true,
+					return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), true, true, true, true,
 							getAuthorities(user.getRole()));
 				} else {
 					throw new UsernameNotFoundException("Impossible de trouver le compte :" + email + ".");
