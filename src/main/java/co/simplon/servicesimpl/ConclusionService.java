@@ -1,4 +1,4 @@
-package co.simplon.ImplServices;
+package co.simplon.servicesimpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

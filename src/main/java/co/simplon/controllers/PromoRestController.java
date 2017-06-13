@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import co.simplon.ImplServices.PromoService;
 import co.simplon.constantes.ErrorMessageEnum;
 import co.simplon.constantes.SecurityRoleConstants;
 import co.simplon.constantes.UriConstants;
 import co.simplon.exceptions.CustomException;
 import co.simplon.models.Promo;
+import co.simplon.servicesimpl.PromoService;
 /**
  * 
  * @author Damien Pradier

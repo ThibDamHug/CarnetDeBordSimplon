@@ -1,4 +1,4 @@
-package co.simplon.ImplServices;
+package co.simplon.servicesimpl;
 
 import java.util.List;
 
