@@ -55,15 +55,4 @@ public class DiaryMapper {
 		diaryDTO.setName(diary.getName());			
 		return diaryDTO;
 	}
-	
-	public List<Diary> getEmptyDiaries(Iterable<Diary> request) {
-		List<Diary> result = new ArrayList<>();
-		for (Diary diary : request) {
-			if (diary.getQuestions().isEmpty()) {
-				Diary diaryDTO = mapDiary(diary);
-				result.add(diaryDTO);
-			}
-		}
-		return result;
-	}
 }

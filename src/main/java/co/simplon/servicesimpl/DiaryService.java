@@ -50,8 +50,15 @@ public class DiaryService implements IDiaryService {
 	}
 	@Override
 	public List<Diary> getNewDiariesByPromo(int promoId) {		
-		Iterable<Diary> request = repository.findByPromoId(promoId);		
-		return diaryMapper.getEmptyDiaries(request);
+		Iterable<Diary> request = repository.findByPromoId(promoId);
+		List<Diary> result = new ArrayList<>();
+		for (Diary diary : request) {
+			if (diary.getQuestions().isEmpty()) {
+				Diary diaryDTO = diaryMapper.mapDiary(diary);
+				result.add(diaryDTO);
+			}
+		}
+		return result;
 	}
 	
 	@Override
