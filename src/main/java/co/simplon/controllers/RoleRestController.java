@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import co.simplon.constantes.SecurityRoleConstants;
+import co.simplon.constantes.UriConstants;
 import co.simplon.models.Role;
 import co.simplon.services.RoleService;
 /**
@@ -16,13 +18,13 @@ import co.simplon.services.RoleService;
  *
  */
 @RestController
-@RequestMapping(value="api/role")
+@RequestMapping(UriConstants.ROLES)
 public class RoleRestController {
-	 @Autowired RoleService RoleService;
+	 @Autowired RoleService roleService;
 	
-	 @PreAuthorize("hasRole('ROLE_administrateur')")
+	 @PreAuthorize(SecurityRoleConstants.ADMIN)
 	 @GetMapping
 	 public List<Role> findAll() {
-			return RoleService.findAll();
+			return roleService.findAll();
 		}
 }

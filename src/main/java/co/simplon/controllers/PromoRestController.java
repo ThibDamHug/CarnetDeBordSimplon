@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import co.simplon.errorenum.ErrorMessageEnum;
+import co.simplon.constantes.ErrorMessageEnum;
+import co.simplon.constantes.SecurityRoleConstants;
+import co.simplon.constantes.UriConstants;
 import co.simplon.exceptions.CustomException;
 import co.simplon.models.Promo;
 import co.simplon.services.PromoService;
@@ -22,19 +24,19 @@ import co.simplon.services.PromoService;
  *
  */
 @RestController
-@RequestMapping(value = "api/promo")
+@RequestMapping(UriConstants.PROMOS)
 public class PromoRestController {
 
 	@Autowired
 	PromoService service;
 
-	@PreAuthorize("hasRole('ROLE_administrateur')")
+	@PreAuthorize(SecurityRoleConstants.ADMIN)
 	@GetMapping
 	public List<Promo> findAll() {
 		return service.findAll();
 	}
 	
-	@PreAuthorize("hasRole('ROLE_administrateur')")
+	@PreAuthorize(SecurityRoleConstants.ADMIN)
 	@PostMapping
 	public Promo save(@Validated @RequestBody Promo promo){
 		Promo result;
@@ -48,7 +50,7 @@ public class PromoRestController {
 		return result;
 	}
 	
-	@PreAuthorize("hasRole('ROLE_administrateur')")
+	@PreAuthorize(SecurityRoleConstants.ADMIN)
 	@PutMapping
 	public Promo update(@RequestBody Promo promo){
 		return service.updatePromo(promo);

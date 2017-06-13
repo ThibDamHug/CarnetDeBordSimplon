@@ -1,6 +1,6 @@
 package co.simplon.models;
 
-import co.simplon.errorenum.ErrorMessageEnum;
+import co.simplon.constantes.ErrorMessageEnum;
 import lombok.Getter;
 /**
  * 
@@ -18,5 +18,4 @@ public class ExceptionMessage {
 		this.code = errorMessageEnum.getCode();
 		this.message = errorMessageEnum.getMessage();		
 	}
-	
 }

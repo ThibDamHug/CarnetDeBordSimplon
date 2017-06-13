@@ -1,4 +1,4 @@
-package co.simplon.errorenum;
+package co.simplon.constantes;
 
 import lombok.Getter;
 /**

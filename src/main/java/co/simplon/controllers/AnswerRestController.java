@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import co.simplon.errorenum.ErrorMessageEnum;
+import co.simplon.constantes.ErrorMessageEnum;
+import co.simplon.constantes.UriConstants;
 import co.simplon.exceptions.CustomException;
 import co.simplon.models.Answer;
 import co.simplon.services.AnswerService;
@@ -20,9 +21,8 @@ import co.simplon.services.AnswerService;
  * @author Damien Pradier
  *
  */
-//@CrossOrigin("http://localhost:3000")
 @RestController
-@RequestMapping("api/answers")
+@RequestMapping(UriConstants.ANSWERS)
 public class AnswerRestController {
 	
 	@Autowired

@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import co.simplon.constantes.SecurityRoleConstants;
+import co.simplon.constantes.UriConstants;
 import co.simplon.models.Question;
 import co.simplon.services.QuestionService;
 /**
@@ -20,14 +22,14 @@ import co.simplon.services.QuestionService;
  *
  */
 @RestController
-@RequestMapping("api/questions")
+@RequestMapping(UriConstants.QUESTIONS)
 public class QuestionRestController {
 
 	@Autowired
 	QuestionService questionService;
 
 	// Permet de sauvegarder une liste de questions(mockup 11)
-	@PreAuthorize("hasRole('ROLE_formateur')")
+	@PreAuthorize(SecurityRoleConstants.ADMIN)
 	@PostMapping
 	public void createUser(@Validated @RequestBody List<Question> questionsList) {
 		questionService.saveQuestionsList(questionsList);

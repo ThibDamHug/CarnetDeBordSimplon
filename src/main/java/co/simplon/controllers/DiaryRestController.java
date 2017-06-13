@@ -5,10 +5,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
-import org.springframework.validation.annotation.Validated;
-
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,7 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import co.simplon.errorenum.ErrorMessageEnum;
+import co.simplon.constantes.ErrorMessageEnum;
+import co.simplon.constantes.RoleEnum;
+import co.simplon.constantes.SecurityRoleConstants;
+import co.simplon.constantes.UriConstants;
 import co.simplon.exceptions.CustomException;
 import co.simplon.models.Diary;
 import co.simplon.services.DiaryService;
@@ -25,15 +26,14 @@ import co.simplon.services.DiaryService;
  * @author Abdel Ahmar
  *
  */
-//@CrossOrigin("http://localhost:3000")
 @RestController
-@RequestMapping("api/diaries")
+@RequestMapping(UriConstants.DIARIES)
 public class DiaryRestController {
 	
 	@Autowired
 	private DiaryService service;
 	
-	@PreAuthorize("hasRole('ROLE_formateur')")
+	@PreAuthorize(SecurityRoleConstants.TEACHER)
 	@PostMapping
 	public Diary saveOne(@Validated @RequestBody Diary diary) {
 		
@@ -43,36 +43,30 @@ public class DiaryRestController {
 		}
 		return result;
 	}
-
-	@PreAuthorize("hasAnyRole('ROLE_administrateur','ROLE_formateur','ROLE_tuteur')")
+	
+	@PreAuthorize(SecurityRoleConstants.STUDENT + " or " + 
+					SecurityRoleConstants.TEACHER + " or " +
+					SecurityRoleConstants.TUTOR)
 	@GetMapping
-	public List<Diary> getAll(@RequestParam Optional<Boolean> consulter,
+	public List<Diary> getAll(@RequestParam boolean read,
 								@RequestParam String userRole,
 								@RequestParam int promoId,
 								@RequestParam Optional<Integer> studentId,
 								@RequestParam Optional<Boolean> questions){
 		List<Diary> result = new ArrayList<>();
-		if (consulter.isPresent()) {
-			if ("formateur".equals(userRole)) {
+		if (read) {
+			if (RoleEnum.TEACHER.getName().equals(userRole)) {
 				result = service.getForReading(promoId);
 			} else if (studentId.isPresent()){
 				result = service.getForReading(promoId, studentId.get());
 			}
-		} else if ("formateur".equals(userRole) && questions.isPresent()){
+		} else if (RoleEnum.TEACHER.getName().equals(userRole) && questions.isPresent() && questions.get()){
 			result = service.getDiariesWithQuestionsByPromo(promoId);			
-		} else if ("formateur".equals(userRole)) {
+		} else if (RoleEnum.TEACHER.getName().equals(userRole)) {
 			result = service.getNewDiariesByPromo(promoId);
 		} else if (studentId.isPresent()){		
 			result = service.getDiariesToEditByStudentId(userRole, promoId, studentId.get());
 		}
 		return result;
 	}
-		
-	//@Formateur, @Tuteur, @Apprenant
-//	@GetMapping
-//	public List<Diary> getAll(@RequestParam String userRole, @RequestParam int userId) {
-//		return service.getAll(userRole, userId);
-//	}
-	
-
 }

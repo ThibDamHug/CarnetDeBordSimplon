@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import co.simplon.errorenum.ErrorMessageEnum;
+import co.simplon.constantes.ErrorMessageEnum;
+import co.simplon.constantes.SecurityRoleConstants;
+import co.simplon.constantes.UriConstants;
 import co.simplon.exceptions.CustomException;
 import co.simplon.models.User;
 import co.simplon.servicesI.UserServicesI;
@@ -26,7 +28,7 @@ import co.simplon.servicesI.UserServicesI;
  *
  */
 @RestController
-@RequestMapping("api/users")
+@RequestMapping(UriConstants.USERS)
 public class UserRestController {     
 
 	  @Autowired
@@ -35,7 +37,8 @@ public class UserRestController {
 	   
 	  //Permet de recuperer les utilisateurs en fonction des roles (mockup 4 et 5) ou en fonction d'une promo et d'un carnet (mockup 11)
 	  //@RequestMapping(method=RequestMethod.GET)
-	  @PreAuthorize("hasAnyRole('ROLE_administrateur,ROLE_formateur')")  
+	  @PreAuthorize(SecurityRoleConstants.ADMIN + " or " +
+			  		SecurityRoleConstants.TEACHER)  
 	  @GetMapping
 	  public List<User> getUsers (	@RequestParam Optional<String> role,
 			  						@RequestParam Optional<Integer> diaryId,
@@ -50,14 +53,14 @@ public class UserRestController {
 	  }
 	  
 	  //Permet de creer un utilisateur (mockup3)
-	  @PreAuthorize("hasRole('ROLE_administrateur')")
+	  @PreAuthorize(SecurityRoleConstants.ADMIN)
 	  @PostMapping
 	  public void createUser(@Validated @RequestBody User user) {
 	     userService.save(user);
 	  }
 	  
 	  //Permet de modifier un utilisateur (mockup4 et 8)
-	  @PreAuthorize("hasRole('ROLE_administrateur')")
+	  @PreAuthorize(SecurityRoleConstants.ADMIN)
 	  @PutMapping("/{id}")
 	  public void updateUser(@PathVariable int id, @RequestBody User user) {
 	     userService.update(id, user);
