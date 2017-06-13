@@ -14046,7 +14046,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "Evenement",
+											"text": "Event",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -21158,7 +21158,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFbGk8AFKy6Wh4="
 					},
-					"name": "Evenement",
+					"name": "Event",
 					"visibility": "public",
 					"attributes": [
 						{
@@ -27837,9 +27837,9 @@
 													"showShadow": true,
 													"containerChangeable": false,
 													"containerExtending": false,
-													"left": 189,
+													"left": 188,
 													"top": 112,
-													"width": 105.51708984375,
+													"width": 107,
 													"height": 13,
 													"autoResize": false,
 													"alpha": 1.5707963267948966,
@@ -28179,7 +28179,7 @@
 													"containerExtending": false,
 													"left": 200,
 													"top": 156,
-													"width": 80.2216796875,
+													"width": 81,
 													"height": 13,
 													"autoResize": false,
 													"alpha": 1.5707963267948966,
