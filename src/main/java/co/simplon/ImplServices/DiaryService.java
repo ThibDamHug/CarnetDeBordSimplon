@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import co.simplon.models.Answer;
+import co.simplon.mappers.ConclusionMapper;
+import co.simplon.mappers.QuestionMapper;
 import co.simplon.models.Conclusion;
 import co.simplon.models.Diary;
 import co.simplon.models.Question;
-import co.simplon.models.User;
 import co.simplon.repositories.DiaryRepository;
 import co.simplon.services.IDiaryService;
 /**
@@ -25,6 +25,12 @@ public class DiaryService implements IDiaryService {
 	
 	@Autowired
 	private DiaryRepository repository;
+	
+	@Autowired
+	private ConclusionMapper conclusionMapper;
+	
+	@Autowired
+	private QuestionMapper questionMapper;
 		
 	public Diary saveOne(Diary diary) {
 		return repository.save(diary);
@@ -36,7 +42,7 @@ public class DiaryService implements IDiaryService {
 		for (Diary diary : request) {
 			if (!diary.getQuestions().isEmpty()) {
 				Diary diaryDTO = filteringDiary(diary);
-				diaryDTO.setQuestions(filteringQuestions(diary.getQuestions()));
+				diaryDTO.setQuestions(questionMapper.mapQuestions(diary.getQuestions()));
 				result.add(diaryDTO);
 			}
 		}
@@ -52,7 +58,7 @@ public class DiaryService implements IDiaryService {
 		List<Diary> result = new ArrayList<>();
 		Iterable<Diary> request = repository.findByPromoId(promoId);	
 		for (Diary diary : request) {
-			List<Question> questionsDTO = filteringQuestionsToEdit(diary.getQuestions(), userRole, studentId);
+			List<Question> questionsDTO = questionMapper.mapQuestionsToEdit(diary.getQuestions(), userRole, studentId);
 			if (!questionsDTO.isEmpty()) {
 				Diary diaryDTO = filteringDiary(diary);
 				diaryDTO.setQuestions(questionsDTO);
@@ -74,7 +80,7 @@ public class DiaryService implements IDiaryService {
 	private List<Conclusion> filteringConclusionsForFormateur(List<Conclusion> conclusions) {
 		List<Conclusion> result = new ArrayList<>();
 		for (Conclusion conclusion : conclusions) {
-			Conclusion conclusionDTO = filteringConclusion(conclusion);			
+			Conclusion conclusionDTO = conclusionMapper.mapConclusion(conclusion);			
 			result.add(conclusionDTO);
 		}
 		return result;
@@ -84,7 +90,7 @@ public class DiaryService implements IDiaryService {
 		List<Conclusion> result = new ArrayList<>();
 		for (Conclusion conclusion : conclusions) {
 			if (conclusion.getUser().getId() == studentId) {
-				Conclusion conclusionDTO = filteringConclusion(conclusion);
+				Conclusion conclusionDTO = conclusionMapper.mapConclusion(conclusion);
 				result.add(conclusionDTO);
 			}				
 		}
@@ -140,57 +146,49 @@ public class DiaryService implements IDiaryService {
 		return result;
 	}
 	
-	private List<Question> filteringQuestions(List<Question> questions) {
-		List<Question> result = new ArrayList<>();
-		for (Question question : questions) {
-			Question questionDTO = filteringQuestion(question);
-			result.add(questionDTO);
-		}
-		return result;
-	}
+//	private List<Question> filteringQuestions(List<Question> questions) {
+//		List<Question> result = new ArrayList<>();
+//		for (Question question : questions) {
+//			Question questionDTO = filteringQuestion(question);
+//			result.add(questionDTO);
+//		}
+//		return result;
+//	}
 	
-	private Question filteringQuestion(Question question) {
-		Question result = new Question();
-		result.setId(question.getId());
-		result.setContent(question.getContent());
-		return result;
-	}
+//	private Question filteringQuestion(Question question) {
+//		Question result = new Question();
+//		result.setId(question.getId());
+//		result.setContent(question.getContent());
+//		return result;
+//	}
 	
-	private List<Question> filteringQuestionsToEdit(List<Question> questions,String userRole, int studentId) {
-		List<Question> result = new ArrayList<>();
-		for (Question question : questions) {
-			if (question.getRole().getName().equals(userRole) && !isAnswered(question, studentId)) {				
-				Question questionDTO = filteringQuestion(question);
-				result.add(questionDTO);				
-			}
-		}
-		return result;
-	}
+//	private List<Question> filteringQuestionsToEdit(List<Question> questions,String userRole, int studentId) {
+//		List<Question> result = new ArrayList<>();
+//		for (Question question : questions) {
+//			if (question.getRole().getName().equals(userRole) && !isAnswered(question, studentId)) {				
+//				Question questionDTO = filteringQuestion(question);
+//				result.add(questionDTO);				
+//			}
+//		}
+//		return result;
+//	}
 	
-	private boolean isAnswered(Question question, int studentId) {		
-		boolean result = false;
-		for (Answer answer : question.getAnswers()) {
-			if (answer.getUser().getId() == studentId) {
-				result = true;
-				break;
-			}
-		}
-		return result;
-	}
-	
-	private User filteringUser(User user) {
-		User result = new User();
-		result.setId(user.getId());
-		result.setFirstname(user.getFirstname());
-		result.setLastname(user.getLastname());
-		return result;
-	}
-	
-	private Conclusion filteringConclusion(Conclusion conclusion) {
-		Conclusion result = new Conclusion();
-		result.setId(conclusion.getId());
-		result.setContent(conclusion.getContent());
-		result.setUser(filteringUser(conclusion.getUser()));
-		return result;
-	}
+//	private boolean isAnswered(Question question, int studentId) {		
+//		boolean result = false;
+//		for (Answer answer : question.getAnswers()) {
+//			if (answer.getUser().getId() == studentId) {
+//				result = true;
+//				break;
+//			}
+//		}
+//		return result;
+//	}
+		
+//	private Conclusion filteringConclusion(Conclusion conclusion) {
+//		Conclusion result = new Conclusion();
+//		result.setId(conclusion.getId());
+//		result.setContent(conclusion.getContent());
+//		result.setUser(userMapper.mapSimpleUser(conclusion.getUser()));
+//		return result;
+//	}
 }

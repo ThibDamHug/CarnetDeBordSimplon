@@ -16,7 +16,7 @@ public class UserMapper {
 	
 	PromoMapper promoMapper;
 
-	protected User setPairDTO(User pair) {
+	private User mapPair(User pair) {
 		User pairDTO = new User();
 		pairDTO.setId(pair.getId());
 		pairDTO.setFirstname(pair.getFirstname());
@@ -24,7 +24,7 @@ public class UserMapper {
 		return pairDTO;
 	}
 	
-	protected User setSimpleUserDTO (User user) {
+	public User mapSimpleUser (User user) {
 		User userDTO = new User();
 		userDTO.setId(user.getId());
 		userDTO.setFirstname(user.getFirstname());
@@ -32,7 +32,7 @@ public class UserMapper {
 		return userDTO;
 	}
 
-	public User setUserDTO(User user) {
+	public User mapUser(User user) {
 		User userDTO = new User();
 		userDTO.setId(user.getId());
 		userDTO.setFirstname(user.getFirstname());
@@ -44,12 +44,12 @@ public class UserMapper {
 			userDTO.setPromo(promoMapper.setPromoDTO(user.getPromo()));
 		}
 		if (user.getPair() != null) {
-			userDTO.setPair(setPairDTO(user.getPair()));
+			userDTO.setPair(mapPair(user.getPair()));
 		}
 		return userDTO;
 	}
 	
-	public User setUserConnectedDTO(User user) {
+	public User mapUserConnected(User user) {
 		User userDTO = new User();
 		userDTO.setId(user.getId());
 		userDTO.setFirstname(user.getFirstname());
@@ -60,7 +60,7 @@ public class UserMapper {
 			userDTO.setPromo(promoMapper.setPromoConnectedDTO(user.getPromo()));
 		}
 		if (user.getPair() != null) {
-			userDTO.setPair(setPairDTO(user.getPair()));
+			userDTO.setPair(mapPair(user.getPair()));
 		}
 		return userDTO;
 	}
