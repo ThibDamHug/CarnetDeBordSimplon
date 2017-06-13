@@ -19,6 +19,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import co.simplon.ImplServices.UserService;
+import co.simplon.constantes.SecurityRoleConstants;
 import co.simplon.models.Role;
 import co.simplon.models.User;
 /**
@@ -48,8 +49,7 @@ public class AuthSecurityConfiguration extends GlobalAuthenticationConfigurerAda
 			public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 				User user = service.findByEmail(email);
 				if (user != null) {
-					return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), true, true, true, true,
-							getAuthorities(user.getRole()));
+					return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(),getAuthorities(user.getRole()));
 				} else {
 					throw new UsernameNotFoundException("Impossible de trouver le compte :" + email + ".");
 				}
@@ -59,9 +59,8 @@ public class AuthSecurityConfiguration extends GlobalAuthenticationConfigurerAda
 
 	// Creation d'un collection d'autorisation a partir d'une liste de role
 	private Collection<? extends GrantedAuthority> getAuthorities(Role role) {
-		String ROLE_PREFIX = "ROLE_";
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-		authorities.add(new SimpleGrantedAuthority(ROLE_PREFIX + role.getName()));
+		authorities.add(new SimpleGrantedAuthority(SecurityRoleConstants.ROLE + role.getName()));
 		return authorities;
 	}
 }
