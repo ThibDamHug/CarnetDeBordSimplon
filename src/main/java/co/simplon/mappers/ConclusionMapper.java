@@ -1,5 +1,6 @@
 package co.simplon.mappers;
 
+<<<<<<< HEAD
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +15,12 @@ import co.simplon.models.Conclusion;
  *
  */
 @Service
+=======
+import org.springframework.beans.factory.annotation.Autowired;
+
+import co.simplon.models.Conclusion;
+
+>>>>>>> 90aaa2261901046e948ae71816305055e7c0c265
 public class ConclusionMapper {
 	
 	@Autowired
@@ -26,6 +33,7 @@ public class ConclusionMapper {
 		conclusionDTO.setUser(userMapper.mapSimpleUser(conclusion.getUser()));
 		return conclusionDTO;
 	}
+<<<<<<< HEAD
 	
 	public List<Conclusion> filteringConclusionsByStudentId(List<Conclusion> conclusions, int studentId) {
 		List<Conclusion> result = new ArrayList<>();
@@ -46,5 +54,7 @@ public class ConclusionMapper {
 		}
 		return result;
 	}
+=======
+>>>>>>> 90aaa2261901046e948ae71816305055e7c0c265
 
 }

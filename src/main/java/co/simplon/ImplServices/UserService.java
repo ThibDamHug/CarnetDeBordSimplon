@@ -43,7 +43,7 @@ public class UserService implements IUserServices {
 		//La requete findAll n'est meme pas a specifier dans UserDao
 		Iterable <User> findAll = userRepo.findAll();
 		for (User user: findAll) {
-			usersDTO.add(userMapper.setUserDTO(user));
+			usersDTO.add(userMapper.mapUser(user));
 		}
 		return usersDTO;
 	}
@@ -52,7 +52,7 @@ public class UserService implements IUserServices {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		String currentPrincipal = authentication.getName();
 		User user = userRepo.findByEmail(currentPrincipal);
-		User userConnected = userMapper.setUserConnectedDTO(user);
+		User userConnected = userMapper.mapUserConnected(user);
 		return userConnected;
 	}
 	  
@@ -60,7 +60,7 @@ public class UserService implements IUserServices {
 		Iterable <User> getByRole = userRepo.findByRoleName(string);
 		List <User> getByRoleDTO = new ArrayList<User>();
 		for (User user : getByRole) {
-			getByRoleDTO.add(userMapper.setUserDTO(user));
+			getByRoleDTO.add(userMapper.mapUser(user));
 		}
 		return getByRoleDTO;
 	}
@@ -78,7 +78,7 @@ public class UserService implements IUserServices {
 					}
 				}
 				if (conclusionsDTO.isEmpty()){
-					withoutConclusionDTO.add(userMapper.setUserDTO(user));
+					withoutConclusionDTO.add(userMapper.mapUser(user));
 				}
 			}
 		}
@@ -87,7 +87,7 @@ public class UserService implements IUserServices {
 	    
 	public void update(int id ,User user) {
 		User userFinal = userRepo.findOne(id);
-		userFinal = userMapper.setUserDTO(user);
+		userFinal = userMapper.mapUser(user);
 		userRepo.save(userFinal);
 	}
 	  
