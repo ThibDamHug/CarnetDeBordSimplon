@@ -1,4 +1,4 @@
-package co.simplon.services;
+package co.simplon.ImplServices;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import co.simplon.models.Answer;
 import co.simplon.repositories.AnswerRepository;
+import co.simplon.services.IAnswerService;
 /**
  * 
  * @author Damien Pradier
@@ -17,7 +18,7 @@ import co.simplon.repositories.AnswerRepository;
  */
 @Service
 @Transactional
-public class AnswerService {
+public class AnswerService implements IAnswerService {
 	
 	@Autowired
 	private AnswerRepository repository;

@@ -1,4 +1,4 @@
-package co.simplon.services;
+package co.simplon.ImplServices;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,14 +12,15 @@ import co.simplon.mappers.UserMapper;
 import co.simplon.models.Conclusion;
 import co.simplon.models.User;
 import co.simplon.repositories.UserRepository;
-import co.simplon.servicesI.UserServicesI;
+import co.simplon.services.IUserServices;
+
 /**
  * 
  * @author Franck Pesson
  *
  */
 @Service
-public class UserService implements UserServicesI {
+public class UserService implements IUserServices {
 
 	//Cree automatique l'instance et/ou la classe demandé si necessaire
 	@Autowired 

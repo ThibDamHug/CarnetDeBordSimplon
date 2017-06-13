@@ -1,4 +1,4 @@
-package co.simplon.services;
+package co.simplon.ImplServices;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import co.simplon.mappers.PromoMapper;
 import co.simplon.models.Promo;
 import co.simplon.repositories.PromoRepository;
+import co.simplon.services.IPromoService;
 /**
  * 
  * @author Damien Pradier
@@ -18,7 +19,7 @@ import co.simplon.repositories.PromoRepository;
  */
 @Service
 @Transactional
-public class PromoService {
+public class PromoService implements IPromoService {
 
 	@Autowired
 	private PromoRepository promoRepo;

@@ -1,4 +1,4 @@
-package co.simplon.services;
+package co.simplon.ImplServices;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 
 import co.simplon.models.Role;
 import co.simplon.repositories.RoleRepository;
+import co.simplon.services.IRoleService;
+
 /**
  * 
  * @author Damien Pradier
@@ -17,7 +19,7 @@ import co.simplon.repositories.RoleRepository;
  */
 @Service
 @Transactional
-public class RoleService {
+public class RoleService implements IRoleService {
 
 	@Autowired
 	private RoleRepository RoleRepo;

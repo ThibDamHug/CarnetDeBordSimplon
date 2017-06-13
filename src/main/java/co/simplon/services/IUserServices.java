@@ -1,6 +1,7 @@
-package co.simplon.servicesI;
+package co.simplon.services;
 
 import java.util.List;
+
 
 import co.simplon.models.User;
 /**
@@ -8,7 +9,8 @@ import co.simplon.models.User;
  * @author Franck Pesson
  *
  */
-public interface UserServicesI {
+
+public interface IUserServices {
 	
 	public User findByEmail(String email) ;
 	

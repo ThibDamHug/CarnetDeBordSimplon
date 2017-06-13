@@ -18,9 +18,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
+import co.simplon.ImplServices.UserService;
 import co.simplon.models.Role;
 import co.simplon.models.User;
-import co.simplon.services.UserService;
 /**
  * 
  * @author Franck Pesson

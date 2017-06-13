@@ -10,13 +10,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import co.simplon.ImplServices.AnswerService;
+import co.simplon.ImplServices.DiaryService;
+import co.simplon.ImplServices.PromoService;
+import co.simplon.ImplServices.QuestionService;
+import co.simplon.ImplServices.RoleService;
+import co.simplon.ImplServices.UserService;
 import co.simplon.models.Question;
-import co.simplon.services.AnswerService;
-import co.simplon.services.DiaryService;
-import co.simplon.services.PromoService;
-import co.simplon.services.QuestionService;
-import co.simplon.services.RoleService;
-import co.simplon.services.UserService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

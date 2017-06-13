@@ -1,4 +1,4 @@
-package co.simplon.services;
+package co.simplon.ImplServices;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +13,7 @@ import co.simplon.models.Diary;
 import co.simplon.models.Question;
 import co.simplon.models.User;
 import co.simplon.repositories.DiaryRepository;
+import co.simplon.services.IDiaryService;
 /**
  * 
  * @author Abdel Ahmar
@@ -20,7 +21,7 @@ import co.simplon.repositories.DiaryRepository;
  */
 @Service
 @Transactional
-public class DiaryService {
+public class DiaryService implements IDiaryService {
 	
 	@Autowired
 	private DiaryRepository repository;

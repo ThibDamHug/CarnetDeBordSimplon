@@ -20,7 +20,7 @@ import co.simplon.constantes.SecurityRoleConstants;
 import co.simplon.constantes.UriConstants;
 import co.simplon.exceptions.CustomException;
 import co.simplon.models.User;
-import co.simplon.servicesI.UserServicesI;
+import co.simplon.services.IUserServices;
 
 /**
  * 
@@ -33,7 +33,7 @@ public class UserRestController {
 
 	  @Autowired
 	  
-	  private UserServicesI userService;
+	  private IUserServices userService;
 	   
 	  //Permet de recuperer les utilisateurs en fonction des roles (mockup 4 et 5) ou en fonction d'une promo et d'un carnet (mockup 11)
 	  //@RequestMapping(method=RequestMethod.GET)
