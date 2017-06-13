@@ -7,8 +7,7 @@ import lombok.Getter;
  *
  */
 @Getter
-public enum ErrorMessageEnum {
-	
+public enum ErrorMessageEnum {	
 	/**
 	 * VALIDATION : 0101
 	 */
@@ -25,7 +24,6 @@ public enum ErrorMessageEnum {
 	 * FETCH : 0203
 	 */
 	FETCH("0203", "Problème lors de la récupération des entités");
-	
 	
 	private String code;
 	private String message;
@@ -47,5 +45,4 @@ public enum ErrorMessageEnum {
 		}		
 		return result;
 	}
-
 }

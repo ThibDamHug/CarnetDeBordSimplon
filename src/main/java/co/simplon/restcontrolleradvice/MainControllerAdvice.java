@@ -1,6 +1,7 @@
 package co.simplon.restcontrolleradvice;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -20,19 +21,12 @@ public class MainControllerAdvice {
 	@ExceptionHandler(CustomException.class)
 	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
 	public ExceptionMessage handleCustomException(CustomException exception) {
-		ExceptionMessage exceptionMessage = new ExceptionMessage(
-											ErrorMessageEnum.getByCode(exception.getErrorCode())
-											);	
-		return exceptionMessage;
+		return new ExceptionMessage(ErrorMessageEnum.getByCode(exception.getErrorCode()));	
 	}
 	
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	public ExceptionMessage handleValidation (MethodArgumentNotValidException exception) {
-		ExceptionMessage exceptionMessage = new ExceptionMessage(ErrorMessageEnum.VALIDATION);		
-		
-		return exceptionMessage;
+		return new ExceptionMessage(ErrorMessageEnum.VALIDATION);
 	}
-	
-	
 }
