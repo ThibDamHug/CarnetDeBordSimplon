@@ -19,8 +19,8 @@ public class ConclusionService implements IConclusionService {
 	@Autowired
 	private ConclusionRepository repository;
 	
+	@Override
 	public Conclusion saveOne(Conclusion conclusion) {
 		return repository.save(conclusion);
 	}
-
 }

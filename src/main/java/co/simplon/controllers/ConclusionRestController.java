@@ -17,7 +17,6 @@ import co.simplon.models.Conclusion;
  * @author Abdel Ahmar
  *
  */
-//@CrossOrigin("http://localhost:3000")
 @RestController
 @RequestMapping(UriConstants.CONCLUSIONS)
 public class ConclusionRestController {

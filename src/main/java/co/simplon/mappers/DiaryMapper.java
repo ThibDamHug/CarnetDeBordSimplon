@@ -23,20 +23,20 @@ public class DiaryMapper {
 		for (Diary diary : request) {
 			if (!diary.getConclusions().isEmpty()) {
 				Diary diaryDTO;
-				diaryDTO = filteringDiary(diary);
-				diaryDTO.setConclusions(conclusionMapper.filteringConclusionsForFormateur(diary.getConclusions()));
+				diaryDTO = mapDiary(diary);
+				diaryDTO.setConclusions(conclusionMapper.mapConclusionsForTeacher(diary.getConclusions()));
 				result.add(diaryDTO);
 			}
 		}		
 		return result;
 	}
 	
-	public List<Diary> filteringDiariesForOtherToRead(Iterable<Diary> request, int studentId) {
+	public List<Diary> mapDiariesForOthersToRead(Iterable<Diary> request, int studentId) {
 		List<Diary> result = new ArrayList<>();
 		for (Diary diary : request) {
 			if (!diary.getConclusions().isEmpty()) {
-				Diary diaryDTO = filteringDiary(diary);				 
-				diaryDTO.setConclusions(conclusionMapper.filteringConclusionsByStudentId(diary.getConclusions(), studentId));
+				Diary diaryDTO = mapDiary(diary);				 
+				diaryDTO.setConclusions(conclusionMapper.mapConclusionsByStudentId(diary.getConclusions(), studentId));
 				if (!diaryDTO.getConclusions().isEmpty()) {					
 					result.add(diaryDTO);
 				}			
@@ -46,7 +46,7 @@ public class DiaryMapper {
 		
 	}
 	
-	public Diary filteringDiary(Diary diary) {	
+	public Diary mapDiary(Diary diary) {	
 		Diary diaryDTO = new Diary();					
 		diaryDTO.setId(diary.getId());
 		diaryDTO.setStartDate(diary.getStartDate());
@@ -60,11 +60,10 @@ public class DiaryMapper {
 		List<Diary> result = new ArrayList<>();
 		for (Diary diary : request) {
 			if (diary.getQuestions().isEmpty()) {
-				Diary diaryDTO = filteringDiary(diary);
+				Diary diaryDTO = mapDiary(diary);
 				result.add(diaryDTO);
 			}
 		}
 		return result;
 	}
-	
 }

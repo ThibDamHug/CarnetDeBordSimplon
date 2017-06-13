@@ -1,6 +1,6 @@
 package co.simplon.mappers;
 
-<<<<<<< HEAD
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,46 +15,35 @@ import co.simplon.models.Conclusion;
  *
  */
 @Service
-=======
-import org.springframework.beans.factory.annotation.Autowired;
-
-import co.simplon.models.Conclusion;
-
->>>>>>> 90aaa2261901046e948ae71816305055e7c0c265
 public class ConclusionMapper {
 	
 	@Autowired
 	private UserMapper userMapper;
 	
-	public Conclusion mapConclusion(Conclusion conclusion) {
+	private Conclusion mapConclusion(Conclusion conclusion) {
 		Conclusion conclusionDTO = new Conclusion();
 		conclusionDTO.setId(conclusion.getId());
 		conclusionDTO.setContent(conclusion.getContent());
 		conclusionDTO.setUser(userMapper.mapSimpleUser(conclusion.getUser()));
 		return conclusionDTO;
 	}
-<<<<<<< HEAD
-	
-	public List<Conclusion> filteringConclusionsByStudentId(List<Conclusion> conclusions, int studentId) {
+	public List<Conclusion> mapConclusionsByStudentId(List<Conclusion> conclusions, int studentId) {
 		List<Conclusion> result = new ArrayList<>();
 		for (Conclusion conclusion : conclusions) {
 			if (conclusion.getUser().getId() == studentId) {
-				Conclusion conclusionDTO = filteringConclusion(conclusion);
+				Conclusion conclusionDTO = mapConclusion(conclusion);
 				result.add(conclusionDTO);
 			}				
 		}
 		return result;
 	}
 	
-	public List<Conclusion> filteringConclusionsForFormateur(List<Conclusion> conclusions) {
+	public List<Conclusion> mapConclusionsForTeacher(List<Conclusion> conclusions) {
 		List<Conclusion> result = new ArrayList<>();
 		for (Conclusion conclusion : conclusions) {
-			Conclusion conclusionDTO = filteringConclusion(conclusion);			
+			Conclusion conclusionDTO = mapConclusion(conclusion);			
 			result.add(conclusionDTO);
 		}
 		return result;
 	}
-=======
->>>>>>> 90aaa2261901046e948ae71816305055e7c0c265
-
 }

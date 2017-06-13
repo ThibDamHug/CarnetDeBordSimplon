@@ -1,5 +1,9 @@
 package co.simplon.constantes;
-
+/**
+ * 
+ * @author Abdel Ahmar
+ *
+ */
 public final class UriConstants {
 	
 	public static final String BASE = "/api";
