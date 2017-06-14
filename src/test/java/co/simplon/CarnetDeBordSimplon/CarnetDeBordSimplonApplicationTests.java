@@ -1,8 +1,5 @@
 package co.simplon.CarnetDeBordSimplon;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -10,11 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import co.simplon.models.Question;
 import co.simplon.servicesimpl.AnswerService;
 import co.simplon.servicesimpl.DiaryService;
 import co.simplon.servicesimpl.PromoService;
-import co.simplon.servicesimpl.QuestionService;
 import co.simplon.servicesimpl.RoleService;
 import co.simplon.servicesimpl.UserService;
 
@@ -30,22 +25,6 @@ public class CarnetDeBordSimplonApplicationTests {
 		int nbrAnswers = answerService.getByDiaryAndStudent(1, 1).size();
 		Assert.assertEquals(10, nbrAnswers);
 	}
-	
-//	@Autowired
-//	private ConclusionService conclusionService;
-//	
-//	@Test
-//	public void testsaveOneConclusion () {
-//		Conclusion test = new Conclusion();
-//		Diary diary = new Diary();
-//		User user = new User ();
-//		test.setId(1);
-//		test.setContent("contenu de test");
-//		test.setDiary(diaryId);
-//		test.setUser(userId);
-//		Conclusion conclusion = conclusionService.saveOne(test);
-//		Assert.assertNotNull(conclusion);
-//	}
 	
 	@Autowired
 	private DiaryService diaryService;
@@ -64,22 +43,6 @@ public class CarnetDeBordSimplonApplicationTests {
 		int nbrPromos = promoService.findAll().size();
 		Assert.assertEquals(2, nbrPromos);
 	}
-	
-	
-//	TEST A FINIR QUAND LE QUESTIONSERVICE SERA TERMINE
-//	
-//	@Autowired
-//	private QuestionService questionService;
-//	
-//	@Test
-//	public void testSaveQuestionsList () {		
-//		List<Question> test = new ArrayList<>();
-//		Question question = new Question();
-//		question.setContent("contenu des la question test");
-//		test.add(question);
-//		List<Question> result = questionService.saveQuestionsList(test);
-//		Assert.assertNotNull(result);
-//	}
 	
 	@Autowired
 	private RoleService roleService;
