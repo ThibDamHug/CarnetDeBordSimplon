@@ -8,6 +8,7 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import co.simplon.mappers.AnswerMapper;
 import co.simplon.models.Answer;
 import co.simplon.repositories.AnswerRepository;
 import co.simplon.services.IAnswerService;
@@ -23,9 +24,12 @@ public class AnswerService implements IAnswerService {
 	@Autowired
 	private AnswerRepository repository;
 	
+	@Autowired
+	private AnswerMapper answerMapper;
+	
 	public List<Answer> getByDiaryAndStudent(int diaryId, int studentId) {
 		Iterable<Answer> request = repository.findByUserId(studentId);
-		List<Answer> result = filteringRequest(request, diaryId);
+		List<Answer> result = answerMapper.mapRequests(request, diaryId);
 		if (result.size() == 10) {
 			return result;
 		} else {
@@ -38,29 +42,9 @@ public class AnswerService implements IAnswerService {
 		List<Answer> result = new ArrayList<>();
 		Iterable<Answer> request = repository.save(answers);
 		for (Answer answer : request) {
-			Answer answerDTO = filteringAnswer(answer);
+			Answer answerDTO = answerMapper.mapAnswers(answer);
 			result.add(answerDTO);
 		}
-		return result;
-	}
-	
-	private List<Answer> filteringRequest(Iterable<Answer> answers, int diaryId) {
-		List<Answer> result = new ArrayList<>();
-		for (Answer answer : answers) {
-			if (answer.getQuestion().getDiary().getId() == diaryId) {
-				Answer answerDTO = new Answer();
-				answerDTO.setId(answer.getId());
-				answerDTO.setContent(answer.getContent());
-				result.add(answerDTO);
-			}
-		}
-		return result;
-	}
-	
-	private Answer filteringAnswer(Answer answer) {
-		Answer result = new Answer();
-		result.setId(answer.getId());
-		result.setContent(answer.getContent());
 		return result;
 	}
 

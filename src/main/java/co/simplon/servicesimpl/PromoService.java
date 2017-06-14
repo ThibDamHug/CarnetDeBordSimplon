@@ -28,7 +28,7 @@ public class PromoService implements IPromoService {
 	private PromoMapper promoMapper;
 	
 	public List<Promo> findAll(){
-		List<Promo> result = new ArrayList<Promo>();
+		List<Promo> result = new ArrayList<>();
 		Iterable<Promo> inter = promoRepo.findAll();
 		for(Promo promo : inter){
 			result.add(promoMapper.setPromoDTO(promo));

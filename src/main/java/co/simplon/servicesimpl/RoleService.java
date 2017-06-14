@@ -25,7 +25,7 @@ public class RoleService implements IRoleService {
 	private RoleRepository RoleRepo;
 	
 	public List<Role> findAll() {
-		List<Role> result = new ArrayList<Role>();
+		List<Role> result = new ArrayList<>();
 		Iterable<Role> inter = RoleRepo.findAll();
 		for (Role role : inter) {
 			result.add(role);			
