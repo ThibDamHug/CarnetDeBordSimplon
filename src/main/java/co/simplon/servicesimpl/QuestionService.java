@@ -19,7 +19,7 @@ public class QuestionService implements IQuestionService {
 	@Autowired
 	QuestionRepository questionRepo;
 
-	public void saveQuestionsList(List<Question> questionsList) {
-			questionRepo.save(questionsList);
+	public Iterable<Question> saveAll(List<Question> questions) {
+			return questionRepo.save(questions);
 	}
 }

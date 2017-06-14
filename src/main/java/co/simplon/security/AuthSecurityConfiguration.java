@@ -59,7 +59,7 @@ public class AuthSecurityConfiguration extends GlobalAuthenticationConfigurerAda
 
 	// Creation d'un collection d'autorisation a partir d'une liste de role
 	private Collection<? extends GrantedAuthority> getAuthorities(Role role) {
-		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+		List<GrantedAuthority> authorities = new ArrayList<>();
 		authorities.add(new SimpleGrantedAuthority(SecurityRoleConstants.ROLE + role.getName()));
 		return authorities;
 	}

@@ -14,16 +14,16 @@ public interface IUserServices {
 	
 	public User findByEmail(String email) ;
 	
-	public void save (User user);
+	public User saveOne (User user);
 	
 	public List<User> findAll ();
 	
-	public User getUserConnected();
+	public User getConnected();
 	
 	public List<User> getByRoleDTO (String string);
 	
-	public List<User> withoutConclusion(int diaryId,int promoId);
+	public List<User> getWithoutConclusionDTO(int diaryId,int promoId);
 	
-	public void update(int id ,User user);
+	public User update(int id ,User user);
 
 }

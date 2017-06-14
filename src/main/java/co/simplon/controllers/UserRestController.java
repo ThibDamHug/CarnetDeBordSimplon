@@ -44,7 +44,7 @@ public class UserRestController {
 			  						@RequestParam Optional<Integer> diaryId,
 			  						@RequestParam Optional<Integer> promoId ) {
 		  if (diaryId.isPresent() && promoId.isPresent()) {
-			  return userService.withoutConclusion(diaryId.get(), promoId.get());
+			  return userService.getWithoutConclusionDTO(diaryId.get(), promoId.get());
 		  } else if (role.isPresent()) {
 			  return userService.getByRoleDTO(role.get()); 
 		  } else {
@@ -56,7 +56,7 @@ public class UserRestController {
 	  @PreAuthorize(SecurityRoleConstants.ADMIN)
 	  @PostMapping
 	  public void createUser(@Validated @RequestBody User user) {
-	     userService.save(user);
+	     userService.saveOne(user);
 	  }
 	  
 	  //Permet de modifier un utilisateur (mockup4 et 8)
@@ -70,7 +70,7 @@ public class UserRestController {
 	  @GetMapping("/connected")
 	  public User getUserConnected() {
 
-		  User result = userService.getUserConnected();
+		  User result = userService.getConnected();
 
 		  if (null == result) {
 			  throw new CustomException(ErrorMessageEnum.FETCH);

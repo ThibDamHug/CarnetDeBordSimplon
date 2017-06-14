@@ -32,7 +32,7 @@ public class QuestionRestController {
 	@PreAuthorize(SecurityRoleConstants.ADMIN)
 	@PostMapping
 	public void createUser(@Validated @RequestBody List<Question> questionsList) {
-		questionService.saveQuestionsList(questionsList);
+		questionService.saveAll(questionsList);
 	}
 
 }

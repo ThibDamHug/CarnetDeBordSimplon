@@ -6,6 +6,6 @@ import co.simplon.models.Question;
 
 public interface IQuestionService {
 	
-	void saveQuestionsList(List<Question> questionsList);
+	Iterable<Question> saveAll(List<Question> questionsList);
 
 }

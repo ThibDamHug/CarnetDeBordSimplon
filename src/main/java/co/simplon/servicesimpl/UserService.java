@@ -34,8 +34,8 @@ public class UserService implements IUserServices {
 		return userRepo.findByEmail(email);
 	}
 	
-	public void save (User user) {
-		userRepo.save(user);
+	public User saveOne (User user) {
+		return userRepo.save(user);
 	}
 	
 	public List<User> findAll () {
@@ -48,7 +48,7 @@ public class UserService implements IUserServices {
 		return usersDTO;
 	}
 		
-	public User getUserConnected() {
+	public User getConnected() {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		String currentPrincipal = authentication.getName();
 		User user = userRepo.findByEmail(currentPrincipal);
@@ -58,37 +58,36 @@ public class UserService implements IUserServices {
 	  
 	public List<User> getByRoleDTO (String string) {
 		Iterable <User> getByRole = userRepo.findByRoleName(string);
-		List <User> getByRoleDTO = new ArrayList<User>();
+		List <User> getByRoleDTO = new ArrayList<>();
 		for (User user : getByRole) {
 			getByRoleDTO.add(userMapper.mapUser(user));
 		}
 		return getByRoleDTO;
 	}
 	  
-	public List<User> withoutConclusion(int diaryId,int promoId) {
+	public List<User> getWithoutConclusionDTO(int diaryId,int promoId) {
 		Iterable <User> fromAPromo = userRepo.findByPromoId(promoId); 
-		List <User> withoutConclusionDTO = new ArrayList<User>();
+		List <User> getUsersWithoutConclusionDTO = new ArrayList<>();
 		for (User user : fromAPromo){
 			if (!user.getConclusions().isEmpty()) {
 				List<Conclusion> conclusions = user.getConclusions();				
-				List<Conclusion> conclusionsDTO = new ArrayList<Conclusion>();
+				List<Conclusion> conclusionsDTO = new ArrayList<>();
 				for (Conclusion conclusion : conclusions) {
 					if (conclusion.getDiary().getId() == diaryId) {
 						conclusionsDTO.add(conclusion);
 					}
 				}
 				if (conclusionsDTO.isEmpty()){
-					withoutConclusionDTO.add(userMapper.mapUser(user));
+					getUsersWithoutConclusionDTO.add(userMapper.mapUser(user));
 				}
 			}
 		}
-		return withoutConclusionDTO;
+		return getUsersWithoutConclusionDTO;
 	}
 	    
-	public void update(int id ,User user) {
+	public User update(int id ,User user) {
 		User userFinal = userRepo.findOne(id);
 		userFinal = userMapper.mapUser(user);
-		userRepo.save(userFinal);
+		return userRepo.save(userFinal);
 	}
-	  
 }
