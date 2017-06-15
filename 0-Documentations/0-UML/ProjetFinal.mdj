@@ -30463,7 +30463,7 @@
 													},
 													"edgePosition": 1,
 													"underline": false,
-													"text": "6 : Consulte l'introduction et les question du carnet de bord",
+													"text": "6 : Affiche l'introduction et les question du carnet de bord",
 													"horizontalAlignment": 2,
 													"verticalAlignment": 5,
 													"wordWrap": false
@@ -30803,7 +30803,7 @@
 													},
 													"edgePosition": 1,
 													"underline": false,
-													"text": "8 : Consulte l'introduction et les questions du carnet de bord",
+													"text": "8 : Affiche l'introduction et les questions du carnet de bord",
 													"horizontalAlignment": 2,
 													"verticalAlignment": 5,
 													"wordWrap": false
@@ -31479,7 +31479,7 @@
 													},
 													"edgePosition": 1,
 													"underline": false,
-													"text": "10 : Consulter les réponses du binôme apprenant/tuteur",
+													"text": "10 : Affiche les réponses du binôme apprenant/tuteur",
 													"horizontalAlignment": 2,
 													"verticalAlignment": 5,
 													"wordWrap": false
@@ -31649,7 +31649,7 @@
 													},
 													"edgePosition": 1,
 													"underline": false,
-													"text": "11 : Editer la conclusion de chaque binôme",
+													"text": "11 : Edite la conclusion de chaque binôme",
 													"horizontalAlignment": 2,
 													"verticalAlignment": 5,
 													"wordWrap": false
@@ -31819,7 +31819,7 @@
 													},
 													"edgePosition": 1,
 													"underline": false,
-													"text": "12 : Consulter la conclusion",
+													"text": "12 : Affiche la conclusion",
 													"horizontalAlignment": 2,
 													"verticalAlignment": 5,
 													"wordWrap": false
@@ -31989,7 +31989,7 @@
 													},
 													"edgePosition": 1,
 													"underline": false,
-													"text": "13 : Consulter la conclusion",
+													"text": "13 : Affiche la conclusion",
 													"horizontalAlignment": 2,
 													"verticalAlignment": 5,
 													"wordWrap": false
@@ -32159,7 +32159,7 @@
 													},
 													"edgePosition": 1,
 													"underline": false,
-													"text": "14 : Consulter les carnets de bord edités",
+													"text": "14 : Affiche les carnets de bord edités",
 													"horizontalAlignment": 2,
 													"verticalAlignment": 5,
 													"wordWrap": false
@@ -32398,7 +32398,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFcNX6eGR+KS0I="
 									},
-									"name": "Consulte l'introduction et les question du carnet de bord",
+									"name": "Affiche l'introduction et les question du carnet de bord",
 									"source": {
 										"$ref": "AAAAAAFcNX6eGR+FUT0="
 									},
@@ -32432,7 +32432,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFcNX6eGR+KS0I="
 									},
-									"name": "Consulte l'introduction et les questions du carnet de bord",
+									"name": "Affiche l'introduction et les questions du carnet de bord",
 									"source": {
 										"$ref": "AAAAAAFcNX6eGR+FUT0="
 									},
@@ -32466,7 +32466,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFcNX6eGR+KS0I="
 									},
-									"name": "Consulter les réponses du binôme apprenant/tuteur",
+									"name": "Affiche les réponses du binôme apprenant/tuteur",
 									"source": {
 										"$ref": "AAAAAAFcNX6eGR+FUT0="
 									},
@@ -32483,7 +32483,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFcNX6eGR+KS0I="
 									},
-									"name": "Editer la conclusion de chaque binôme",
+									"name": "Edite la conclusion de chaque binôme",
 									"source": {
 										"$ref": "AAAAAAFcNX6eGR+C/ow="
 									},
@@ -32500,7 +32500,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFcNX6eGR+KS0I="
 									},
-									"name": "Consulter la conclusion",
+									"name": "Affiche la conclusion",
 									"source": {
 										"$ref": "AAAAAAFcNX6eGR+FUT0="
 									},
@@ -32517,7 +32517,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFcNX6eGR+KS0I="
 									},
-									"name": "Consulter la conclusion",
+									"name": "Affiche la conclusion",
 									"source": {
 										"$ref": "AAAAAAFcNX6eGR+FUT0="
 									},
@@ -32534,7 +32534,7 @@
 									"_parent": {
 										"$ref": "AAAAAAFcNX6eGR+KS0I="
 									},
-									"name": "Consulter les carnets de bord edités",
+									"name": "Affiche les carnets de bord edités",
 									"source": {
 										"$ref": "AAAAAAFcNX6eGR+FUT0="
 									},
