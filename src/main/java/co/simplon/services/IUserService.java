@@ -10,7 +10,7 @@ import co.simplon.models.User;
  *
  */
 
-public interface IUserServices {
+public interface IUserService {
 	
 	public User findByEmail(String email) ;
 	

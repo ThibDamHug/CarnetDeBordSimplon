@@ -12,7 +12,7 @@ import co.simplon.mappers.UserMapper;
 import co.simplon.models.Conclusion;
 import co.simplon.models.User;
 import co.simplon.repositories.UserRepository;
-import co.simplon.services.IUserServices;
+import co.simplon.services.IUserService;
 
 /**
  * 
@@ -20,7 +20,7 @@ import co.simplon.services.IUserServices;
  *
  */
 @Service
-public class UserService implements IUserServices {
+public class UserService implements IUserService {
 
 	//Cree automatique l'instance et/ou la classe demandé si necessaire
 	@Autowired 

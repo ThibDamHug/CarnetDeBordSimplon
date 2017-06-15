@@ -7,18 +7,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import co.simplon.servicesimpl.AnswerService;
-import co.simplon.servicesimpl.DiaryService;
-import co.simplon.servicesimpl.PromoService;
-import co.simplon.servicesimpl.RoleService;
-import co.simplon.servicesimpl.UserService;
+import co.simplon.services.IAnswerService;
+import co.simplon.services.IDiaryService;
+import co.simplon.services.IPromoService;
+import co.simplon.services.IRoleService;
+import co.simplon.services.IUserService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class CarnetDeBordSimplonApplicationTests {
 	
 	@Autowired
-	private AnswerService answerService;
+	private IAnswerService answerService;
 	
 	@Test
 	public void testGetByDiaryAndStudent () {
@@ -27,7 +27,7 @@ public class CarnetDeBordSimplonApplicationTests {
 	}
 	
 	@Autowired
-	private DiaryService diaryService;
+	private IDiaryService diaryService;
 	
 	@Test
 	public void testGetNewDiariesByPromo () {
@@ -36,7 +36,7 @@ public class CarnetDeBordSimplonApplicationTests {
 	}
 
 	@Autowired
-	private PromoService promoService;
+	private IPromoService promoService;
 	
 	@Test
 	public void testfindAllPromos () {
@@ -45,7 +45,7 @@ public class CarnetDeBordSimplonApplicationTests {
 	}
 	
 	@Autowired
-	private RoleService roleService;
+	private IRoleService roleService;
 	
 	@Test
 	public void testFindAllRole () {
@@ -54,7 +54,7 @@ public class CarnetDeBordSimplonApplicationTests {
 	}
 
 	@Autowired
-	private UserService userService;
+	private IUserService userService;
 	
 	@Test
 	public void testfindAllUsers () {
