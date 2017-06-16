@@ -30,7 +30,7 @@ import co.simplon.servicesimpl.UserService;
 @Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class AuthSecurityConfiguration extends GlobalAuthenticationConfigurerAdapter {
-
+	
 	@Autowired
 	UserService service;
 
@@ -51,6 +51,7 @@ public class AuthSecurityConfiguration extends GlobalAuthenticationConfigurerAda
 				if (user != null) {
 					return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(),getAuthorities(user.getRole()));
 				} else {
+
 					throw new UsernameNotFoundException("Impossible de trouver le compte :" + email + ".");
 				}
 			}
