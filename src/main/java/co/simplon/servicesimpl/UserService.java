@@ -29,15 +29,17 @@ public class UserService implements IUserService {
 	@Autowired
 	private UserMapper userMapper;
 
-	
+	@Override
 	public User findByEmail(String email) {
 		return userRepo.findByEmail(email);
 	}
 	
+	@Override
 	public User saveOne (User user) {
 		return userRepo.save(user);
 	}
 	
+	@Override
 	public List<User> findAll () {
 		List <User> usersDTO = new ArrayList<>();
 		//La requete findAll n'est meme pas a specifier dans UserDao
@@ -47,7 +49,8 @@ public class UserService implements IUserService {
 		}
 		return usersDTO;
 	}
-		
+	
+	@Override
 	public User getConnected() {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		String currentPrincipal = authentication.getName();
@@ -55,7 +58,8 @@ public class UserService implements IUserService {
 		User userConnected = userMapper.mapUserConnected(user);
 		return userConnected;
 	}
-	  
+	
+	@Override
 	public List<User> getByRoleDTO (String string) {
 		Iterable <User> getByRole = userRepo.findByRoleName(string);
 		List <User> getByRoleDTO = new ArrayList<>();
@@ -64,7 +68,8 @@ public class UserService implements IUserService {
 		}
 		return getByRoleDTO;
 	}
-	  
+	 
+	@Override
 	public List<User> getWithoutConclusionDTO(int diaryId,int promoId) {
 		Iterable <User> fromAPromo = userRepo.findByPromoId(promoId); 
 		List <User> getUsersWithoutConclusionDTO = new ArrayList<>();
@@ -85,6 +90,7 @@ public class UserService implements IUserService {
 		return getUsersWithoutConclusionDTO;
 	}
 	    
+	@Override
 	public User update(int id ,User user) {
 		User userFinal = userRepo.findOne(id);
 		userFinal = userMapper.mapUser(user);
