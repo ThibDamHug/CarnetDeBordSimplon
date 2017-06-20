@@ -29,10 +29,10 @@ public class AnswerMapper {
 	}
 	
 	public Answer mapAnswers(Answer answer) {
-		Answer result = new Answer();
-		result.setId(answer.getId());
-		result.setContent(answer.getContent());
-		return result;
+		Answer answerDTO = new Answer();
+		answerDTO.setId(answer.getId());
+		answerDTO.setContent(answer.getContent());
+		return answerDTO;
 	}
 	
 }
