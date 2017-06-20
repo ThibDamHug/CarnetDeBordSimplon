@@ -18,7 +18,6 @@ import co.simplon.security.rest.configuration.RESTLogoutSuccessHandler;
 //Previent SpringBoot Security
 @EnableWebSecurity
 @Configuration
-
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Autowired	
