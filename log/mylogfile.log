@@ -6837,3 +6837,99 @@ Consider defining a bean of type 'java.util.logging.Logger' in your configuratio
 2017-juin-19 11:30:34.967 INFO  [main] c.s.CarnetDeBordSimplonApplication - Started CarnetDeBordSimplonApplication in 9.995 seconds (JVM running for 10.668)
 2017-juin-19 11:30:40.169 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
 2017-juin-19 11:30:47.222 ERROR [http-nio-8080-exec-4] MainControllerAdvice - Validation failed for argument at index 0 in method: public co.simplon.models.Diary co.simplon.controllers.DiaryRestController.saveOne(co.simplon.models.Diary), with 4 error(s): [Field error in object 'diary' on field 'promo': rejected value [null]; codes [NotNull.diary.promo,NotNull.promo,NotNull.co.simplon.models.Promo,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [diary.promo,promo]; arguments []; default message [promo]]; default message [ne peut pas être nul]] [Field error in object 'diary' on field 'introduction': rejected value [null]; codes [NotEmpty.diary.introduction,NotEmpty.introduction,NotEmpty.java.lang.String,NotEmpty]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [diary.introduction,introduction]; arguments []; default message [introduction]]; default message [ne peut pas être vide]] [Field error in object 'diary' on field 'startDate': rejected value [null]; codes [NotNull.diary.startDate,NotNull.startDate,NotNull.java.util.Date,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [diary.startDate,startDate]; arguments []; default message [startDate]]; default message [ne peut pas être nul]] [Field error in object 'diary' on field 'endDate': rejected value [null]; codes [NotNull.diary.endDate,NotNull.endDate,NotNull.java.util.Date,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [diary.endDate,endDate]; arguments []; default message [endDate]]; default message [ne peut pas être nul]] 
+2017-juin-20 10:04:08.974 INFO  [main] c.s.CarnetDeBordSimplonApplication - Starting CarnetDeBordSimplonApplication on DESKTOP-R1DUPI7 with PID 784 (C:\Users\Simplon\git\CarnetDeBordSimplon\target\classes started by Simplon in C:\Users\Simplon\git\CarnetDeBordSimplon)
+2017-juin-20 10:04:08.990 INFO  [main] c.s.CarnetDeBordSimplonApplication - No active profile set, falling back to default profiles: default
+2017-juin-20 10:04:09.240 INFO  [main] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3d121db3: startup date [Tue Jun 20 10:04:09 CEST 2017]; root of context hierarchy
+2017-juin-20 10:04:13.725 INFO  [main] o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+2017-juin-20 10:04:13.817 INFO  [main] o.a.c.c.StandardService - Starting service Tomcat
+2017-juin-20 10:04:13.833 INFO  [main] o.a.c.c.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2017-juin-20 10:04:14.540 INFO  [localhost-startStop-1] o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+2017-juin-20 10:04:15.065 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-juin-20 10:04:15.077 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-juin-20 10:04:15.077 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-juin-20 10:04:15.092 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2017-juin-20 10:04:15.092 INFO  [localhost-startStop-1] o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2017-juin-20 10:04:15.092 INFO  [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2017-juin-20 10:04:19.056 INFO  [main] o.s.j.d.i.ScriptUtils - Executing SQL script from URL [file:/C:/Users/Simplon/git/CarnetDeBordSimplon/target/classes/schema.sql]
+2017-juin-20 10:04:21.876 INFO  [main] o.s.j.d.i.ScriptUtils - Executed SQL script from URL [file:/C:/Users/Simplon/git/CarnetDeBordSimplon/target/classes/schema.sql] in 2810 ms.
+2017-juin-20 10:04:21.886 INFO  [main] o.s.j.d.i.ScriptUtils - Executing SQL script from URL [file:/C:/Users/Simplon/git/CarnetDeBordSimplon/target/classes/data.sql]
+2017-juin-20 10:04:22.831 INFO  [main] o.s.j.d.i.ScriptUtils - Executed SQL script from URL [file:/C:/Users/Simplon/git/CarnetDeBordSimplon/target/classes/data.sql] in 945 ms.
+2017-juin-20 10:04:23.253 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-juin-20 10:04:24.825 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-juin-20 10:04:26.962 INFO  [main] o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2017-juin-20 10:04:27.522 INFO  [main] o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2017-juin-20 10:04:27.740 INFO  [main] o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+2017-juin-20 10:04:27.756 INFO  [main] c.s.CarnetDeBordSimplonApplication - Started CarnetDeBordSimplonApplication in 19.38 seconds (JVM running for 24.736)
+2017-juin-20 10:04:34.014 INFO  [http-nio-8080-exec-10] o.a.c.c.C.[.[.[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-juin-20 13:45:54.473 INFO  [main] c.s.C.CarnetDeBordSimplonApplicationTests - Starting CarnetDeBordSimplonApplicationTests on DESKTOP-R1DUPI7 with PID 940 (started by Simplon in C:\Users\Simplon\git\CarnetDeBordSimplon)
+2017-juin-20 13:45:54.473 INFO  [main] c.s.C.CarnetDeBordSimplonApplicationTests - No active profile set, falling back to default profiles: default
+2017-juin-20 13:45:58.495 INFO  [main] o.s.j.d.i.ScriptUtils - Executing SQL script from URL [file:/C:/Users/Simplon/git/CarnetDeBordSimplon/target/classes/schema.sql]
+2017-juin-20 13:46:00.748 INFO  [main] o.s.j.d.i.ScriptUtils - Executed SQL script from URL [file:/C:/Users/Simplon/git/CarnetDeBordSimplon/target/classes/schema.sql] in 2242 ms.
+2017-juin-20 13:46:00.757 INFO  [main] o.s.j.d.i.ScriptUtils - Executing SQL script from URL [file:/C:/Users/Simplon/git/CarnetDeBordSimplon/target/classes/data.sql]
+2017-juin-20 13:46:01.492 INFO  [main] o.s.j.d.i.ScriptUtils - Executed SQL script from URL [file:/C:/Users/Simplon/git/CarnetDeBordSimplon/target/classes/data.sql] in 735 ms.
+2017-juin-20 13:46:01.820 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-juin-20 13:46:04.312 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-juin-20 13:46:10.384 INFO  [main] o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: ServletContext resource [/index.html]
+2017-juin-20 13:46:10.864 INFO  [main] c.s.C.CarnetDeBordSimplonApplicationTests - Started CarnetDeBordSimplonApplicationTests in 16.797 seconds (JVM running for 18.067)
+2017-juin-20 13:46:11.913 INFO  [Thread-3] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-juin-20 17:41:16.906 INFO  [RMI TCP Connection(554)-127.0.0.1] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2017-juin-20 17:41:17.034 INFO  [RMI TCP Connection(554)-127.0.0.1] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3d121db3: startup date [Tue Jun 20 10:04:09 CEST 2017]; root of context hierarchy
+2017-juin-20 17:41:17.706 INFO  [RMI TCP Connection(554)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2017-juin-20 17:41:17.753 INFO  [RMI TCP Connection(554)-127.0.0.1] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-juin-22 11:00:55.298 INFO  [main] c.s.CarnetDeBordSimplonApplication - Starting CarnetDeBordSimplonApplication on DESKTOP-R1DUPI7 with PID 2344 (C:\Users\Simplon\git\CarnetDeBordSimplon\target\classes started by Simplon in C:\Users\Simplon\git\CarnetDeBordSimplon)
+2017-juin-22 11:00:55.330 INFO  [main] c.s.CarnetDeBordSimplonApplication - No active profile set, falling back to default profiles: default
+2017-juin-22 11:00:55.466 INFO  [main] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3d121db3: startup date [Thu Jun 22 11:00:55 CEST 2017]; root of context hierarchy
+2017-juin-22 11:01:08.414 INFO  [main] o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+2017-juin-22 11:01:08.527 INFO  [main] o.a.c.c.StandardService - Starting service Tomcat
+2017-juin-22 11:01:08.527 INFO  [main] o.a.c.c.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2017-juin-22 11:01:09.587 INFO  [localhost-startStop-1] o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+2017-juin-22 11:01:10.049 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-juin-22 11:01:10.064 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-juin-22 11:01:10.064 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-juin-22 11:01:10.080 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2017-juin-22 11:01:10.080 INFO  [localhost-startStop-1] o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2017-juin-22 11:01:10.080 INFO  [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2017-juin-22 11:01:14.049 INFO  [main] o.s.j.d.i.ScriptUtils - Executing SQL script from URL [file:/C:/Users/Simplon/git/CarnetDeBordSimplon/target/classes/schema.sql]
+2017-juin-22 11:01:25.406 INFO  [main] o.s.j.d.i.ScriptUtils - Executed SQL script from URL [file:/C:/Users/Simplon/git/CarnetDeBordSimplon/target/classes/schema.sql] in 11350 ms.
+2017-juin-22 11:01:25.413 INFO  [main] o.s.j.d.i.ScriptUtils - Executing SQL script from URL [file:/C:/Users/Simplon/git/CarnetDeBordSimplon/target/classes/data.sql]
+2017-juin-22 11:01:30.577 INFO  [main] o.s.j.d.i.ScriptUtils - Executed SQL script from URL [file:/C:/Users/Simplon/git/CarnetDeBordSimplon/target/classes/data.sql] in 5164 ms.
+2017-juin-22 11:01:31.517 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-juin-22 11:01:36.768 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-juin-22 11:01:41.357 INFO  [main] o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2017-juin-22 11:01:41.936 INFO  [main] o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2017-juin-22 11:01:42.546 INFO  [main] o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+2017-juin-22 11:01:42.580 INFO  [main] c.s.CarnetDeBordSimplonApplication - Started CarnetDeBordSimplonApplication in 47.781 seconds (JVM running for 54.865)
+2017-juin-22 11:02:39.888 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-juin-22 11:13:18.471 INFO  [RMI TCP Connection(23)-127.0.0.1] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2017-juin-22 11:13:18.488 INFO  [RMI TCP Connection(23)-127.0.0.1] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3d121db3: startup date [Thu Jun 22 11:00:55 CEST 2017]; root of context hierarchy
+2017-juin-22 11:13:18.504 INFO  [RMI TCP Connection(23)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2017-juin-22 11:13:18.504 INFO  [RMI TCP Connection(23)-127.0.0.1] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-juil.-05 14:11:51.857 INFO  [restartedMain] c.s.CarnetDeBordSimplonApplication - Starting CarnetDeBordSimplonApplication on DESKTOP-R1DUPI7 with PID 5712 (C:\Users\Simplon\git\CarnetDeBordSimplon\target\classes started by Simplon in C:\Users\Simplon\git\CarnetDeBordSimplon)
+2017-juil.-05 14:11:51.873 INFO  [restartedMain] c.s.CarnetDeBordSimplonApplication - No active profile set, falling back to default profiles: default
+2017-juil.-05 14:11:52.060 INFO  [restartedMain] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@752adcf6: startup date [Wed Jul 05 14:11:52 CEST 2017]; root of context hierarchy
+2017-juil.-05 14:11:56.388 INFO  [restartedMain] o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8080 (http)
+2017-juil.-05 14:11:56.434 INFO  [restartedMain] o.a.c.c.StandardService - Starting service Tomcat
+2017-juil.-05 14:11:56.450 INFO  [restartedMain] o.a.c.c.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.14
+2017-juil.-05 14:11:56.590 INFO  [localhost-startStop-1] o.a.c.c.C.[.[.[/] - Initializing Spring embedded WebApplicationContext
+2017-juil.-05 14:11:56.950 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-juil.-05 14:11:56.950 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-juil.-05 14:11:56.950 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-juil.-05 14:11:56.950 INFO  [localhost-startStop-1] o.s.b.w.s.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2017-juil.-05 14:11:56.965 INFO  [localhost-startStop-1] o.s.b.w.s.DelegatingFilterProxyRegistrationBean - Mapping filter: 'springSecurityFilterChain' to: [/*]
+2017-juil.-05 14:11:56.965 INFO  [localhost-startStop-1] o.s.b.w.s.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2017-juil.-05 14:11:57.793 INFO  [restartedMain] o.s.j.d.i.ScriptUtils - Executing SQL script from URL [file:/C:/Users/Simplon/git/CarnetDeBordSimplon/target/classes/schema.sql]
+2017-juil.-05 14:11:59.655 INFO  [restartedMain] o.s.j.d.i.ScriptUtils - Executed SQL script from URL [file:/C:/Users/Simplon/git/CarnetDeBordSimplon/target/classes/schema.sql] in 1844 ms.
+2017-juil.-05 14:11:59.672 INFO  [restartedMain] o.s.j.d.i.ScriptUtils - Executing SQL script from URL [file:/C:/Users/Simplon/git/CarnetDeBordSimplon/target/classes/data.sql]
+2017-juil.-05 14:12:00.563 INFO  [restartedMain] o.s.j.d.i.ScriptUtils - Executed SQL script from URL [file:/C:/Users/Simplon/git/CarnetDeBordSimplon/target/classes/data.sql] in 891 ms.
+2017-juil.-05 14:12:00.860 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-juil.-05 14:12:02.767 INFO  [restartedMain] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-juil.-05 14:12:05.020 INFO  [restartedMain] o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2017-juil.-05 14:12:05.453 INFO  [restartedMain] o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2017-juil.-05 14:12:05.515 INFO  [restartedMain] o.s.j.e.a.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2017-juil.-05 14:12:05.672 INFO  [restartedMain] o.s.b.c.e.t.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8080 (http)
+2017-juil.-05 14:12:05.687 INFO  [restartedMain] c.s.CarnetDeBordSimplonApplication - Started CarnetDeBordSimplonApplication in 15.68 seconds (JVM running for 16.918)
+2017-juil.-05 14:12:10.319 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[.[.[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2017-juil.-05 16:45:20.976 INFO  [RMI TCP Connection(79)-127.0.0.1] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2017-juil.-05 16:45:21.033 INFO  [RMI TCP Connection(79)-127.0.0.1] o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@752adcf6: startup date [Wed Jul 05 14:11:52 CEST 2017]; root of context hierarchy
+2017-juil.-05 16:45:21.064 INFO  [RMI TCP Connection(79)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+2017-juil.-05 16:45:21.080 INFO  [RMI TCP Connection(79)-127.0.0.1] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
