@@ -12857,7 +12857,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "USER",
+											"text": "User",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -13292,7 +13292,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "ROLE",
+											"text": "Role",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -13640,7 +13640,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "PROMO",
+											"text": "Promo",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -14046,7 +14046,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "EVENT",
+											"text": "Event",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -15327,7 +15327,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "DIARY",
+											"text": "Diary",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -17032,7 +17032,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "CONCLUSION",
+											"text": "Conclusion",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -18226,7 +18226,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "QUESTION",
+											"text": "Question",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -19420,7 +19420,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "ANSWER",
+											"text": "Answer",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -20579,7 +20579,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFbGk8AFKy6Wh4="
 					},
-					"name": "USER",
+					"name": "User",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -20922,7 +20922,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFbGk8AFKy6Wh4="
 					},
-					"name": "ROLE",
+					"name": "Role",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -21022,7 +21022,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFbGk8AFKy6Wh4="
 					},
-					"name": "PROMO",
+					"name": "Promo",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -21158,7 +21158,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFbGk8AFKy6Wh4="
 					},
-					"name": "EVENT",
+					"name": "Event",
 					"visibility": "public",
 					"attributes": [
 						{
@@ -21262,7 +21262,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFbGk8AFKy6Wh4="
 					},
-					"name": "DIARY",
+					"name": "Diary",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -21510,7 +21510,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFbGk8AFKy6Wh4="
 					},
-					"name": "CONCLUSION",
+					"name": "Conclusion",
 					"visibility": "public",
 					"attributes": [
 						{
@@ -21561,7 +21561,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFbGk8AFKy6Wh4="
 					},
-					"name": "QUESTION",
+					"name": "Question",
 					"ownedElements": [
 						{
 							"_type": "UMLAssociation",
@@ -21661,7 +21661,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFbGk8AFKy6Wh4="
 					},
-					"name": "ANSWER",
+					"name": "Answer",
 					"visibility": "public",
 					"attributes": [
 						{
