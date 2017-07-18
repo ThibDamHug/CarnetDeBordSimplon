@@ -9,7 +9,7 @@ INSERT INTO `role` (`name`) VALUES
 ('apprenant');
 -- promo
 INSERT INTO `promo` (`name`,`start_date`,`end_date`) VALUES
-('laposte1','2016-11-01','2017-07-30');
+('la-poste','2016-11-01','2017-07-30');
 INSERT INTO `promo` (`name`,`start_date`,`end_date`) VALUES
 ('pole-emploi','2017-09-01','2018-02-20');
 -- diary
@@ -28,22 +28,22 @@ INSERT INTO `diary` (`name`,`start_date`,`end_date`,`introduction`,`promo_id`) V
 -- users :
 -- apprenant
 INSERT INTO `user` (`firstname`,`lastname`, `password`,`email`,`pair_id`,`role_id`,`promo_id` ) VALUES
-('abdel', 'dupont1', 'azerty', 'abdel@simplon.co', null, 4, 1); 
+('abdel', 'ahmar', 'azerty', 'abdel@simplon.co', null, 4, 1); 
 INSERT INTO `user` (`firstname`,`lastname`, `password`,`email`,`pair_id`,`role_id`,`promo_id` ) VALUES
-('damien', 'dupont2', 'azerty', 'damien@simplon.co', null, 4, 1);
+('damien', 'pradier', 'azerty', 'damien@simplon.co', null, 4, 1);
 -- formateur
 INSERT INTO `user` (`firstname`,`lastname`, `password`,`email`,`pair_id`,`role_id`,`promo_id` ) VALUES
-('manu', 'dupont3', 'azerty', 'manu@simplon.co', null, 1, 1);
+('manu', 'lepevedic', 'azerty', 'manu@simplon.co', null, 1, 1);
 INSERT INTO `user` (`firstname`,`lastname`, `password`,`email`,`pair_id`,`role_id`,`promo_id` ) VALUES
-('nico', 'dupont4', 'azerty', 'nico@simplon.co', null, 1, 1);
+('nico', 'hovart', 'azerty', 'nico@simplon.co', null, 1, 1);
 -- tuteur
 INSERT INTO `user` (`firstname`,`lastname`, `password`,`email`,`pair_id`,`role_id`,`promo_id` ) VALUES
-('michael', 'dupont5', 'azerty', 'michael@simplon.co', 1, 2, null);
+('michael', 'hervieux', 'azerty', 'michael@simplon.co', 1, 2, null);
 INSERT INTO `user` (`firstname`,`lastname`, `password`,`email`,`pair_id`,`role_id`,`promo_id` ) VALUES
-('ali', 'dupont6', 'azerty', 'ali@simplon.co', 2, 2, null);
+('ali', 'azzanagui', 'azerty', 'ali@simplon.co', 2, 2, null);
 -- administrateur
 INSERT INTO `user` (`firstname`,`lastname`, `password`,`email`,`pair_id`,`role_id`,`promo_id` ) VALUES
-('laeticia', 'dupont7', 'azerty', 'laeticia@simplon.co', null, 3, null);
+('laeticia', 'amourous', 'azerty', 'laeticia@simplon.co', null, 3, null);
 
 -- questions
 
