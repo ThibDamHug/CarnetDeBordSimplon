@@ -9,9 +9,9 @@ INSERT INTO `role` (`name`) VALUES
 ('apprenant');
 -- promo
 INSERT INTO `promo` (`name`,`start_date`,`end_date`) VALUES
-('la-poste','2016-11-01','2017-07-30');
+('La-Poste','2016-11-01','2017-07-30');
 INSERT INTO `promo` (`name`,`start_date`,`end_date`) VALUES
-('pole-emploi','2017-09-01','2018-02-20');
+('Pole-Emploi','2017-09-01','2018-02-20');
 -- diary
 INSERT INTO `diary` (`name`,`start_date`,`end_date`,`introduction`,`promo_id`) VALUES
 ('session1 complete','2017-01-01','2017-01-15','ceci sera ma premiere introduction',1);
@@ -28,22 +28,22 @@ INSERT INTO `diary` (`name`,`start_date`,`end_date`,`introduction`,`promo_id`) V
 -- users :
 -- apprenant
 INSERT INTO `user` (`firstname`,`lastname`, `password`,`email`,`pair_id`,`role_id`,`promo_id` ) VALUES
-('abdel', 'ahmar', 'azerty', 'abdel@simplon.co', null, 4, 1); 
+('Abdel', 'Ahmar', 'azerty', 'abdel@simplon.co', null, 4, 1); 
 INSERT INTO `user` (`firstname`,`lastname`, `password`,`email`,`pair_id`,`role_id`,`promo_id` ) VALUES
-('damien', 'pradier', 'azerty', 'damien@simplon.co', null, 4, 1);
+('Damien', 'Pradier', 'azerty', 'damien@simplon.co', null, 4, 1);
 -- formateur
 INSERT INTO `user` (`firstname`,`lastname`, `password`,`email`,`pair_id`,`role_id`,`promo_id` ) VALUES
-('manu', 'lepevedic', 'azerty', 'manu@simplon.co', null, 1, 1);
+('Emmanuel', 'Lepevedic', 'azerty', 'manu@simplon.co', null, 1, 1);
 INSERT INTO `user` (`firstname`,`lastname`, `password`,`email`,`pair_id`,`role_id`,`promo_id` ) VALUES
-('nico', 'hovart', 'azerty', 'nico@simplon.co', null, 1, 1);
+('Nicolas', 'Hovart', 'azerty', 'nico@simplon.co', null, 1, 1);
 -- tuteur
 INSERT INTO `user` (`firstname`,`lastname`, `password`,`email`,`pair_id`,`role_id`,`promo_id` ) VALUES
-('michael', 'hervieux', 'azerty', 'michael@simplon.co', 1, 2, null);
+('Michael', 'Hervieux', 'azerty', 'michael@simplon.co', 1, 2, null);
 INSERT INTO `user` (`firstname`,`lastname`, `password`,`email`,`pair_id`,`role_id`,`promo_id` ) VALUES
-('ali', 'azzanagui', 'azerty', 'ali@simplon.co', 2, 2, null);
+('Ali', 'Azzanagui', 'azerty', 'ali@simplon.co', 2, 2, null);
 -- administrateur
 INSERT INTO `user` (`firstname`,`lastname`, `password`,`email`,`pair_id`,`role_id`,`promo_id` ) VALUES
-('laeticia', 'amourous', 'azerty', 'laeticia@simplon.co', null, 3, null);
+('Laeticia', 'Amourous', 'azerty', 'laeticia@simplon.co', null, 3, null);
 
 -- questions
 
